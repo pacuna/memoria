@@ -1,0 +1,4 @@
+\select@language {spanish}
+\contentsline {chapter}{Index of Figures}{\es@scroman {iv}}{chapter*.1}
+\select@language {spanish}
+\contentsline {chapter}{Bibliography}{2}{chapter*.2}
