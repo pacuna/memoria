@@ -1,0 +1,55 @@
+=CONTEXTO=
+
+-contexto sobre calidad
+    -¿que es calidad como concepto general?
+    -¿cuál es el papel de calidad en desarrollo de software?
+    -¿como se maneja principalmente la calidad en el proceso?
+
+-contexto sobre mantenibilidad
+    -¿que es mantenibilidad de software?
+    -¿Como se puede medir la mantenibilidad de software?
+    -¿Cual es la relación entre mantenibilidad y continuidad
+    de desarrollo?
+
+=PROBLEMA=
+
+-problema principal
+    -como certificar continuidad de desarrollo por parte de terceros
+
+problema secundario
+    -como utilizar un modelo de calidad para medir continuidad
+    de desarrollo
+
+=PROPUESTA=
+
+-utilización de un modelo de calidad
+    -ISO 25010
+        -historia
+        -definiciones
+        -modelo completo
+        -mantenibilidad
+        -otras características que puedan servir para el problema
+
+-realizar una evaluación de calidad utilizando el modelo generado
+    -descripción del proceso básico para realizar la evaluación (ISO 25040)
+
+=ESTADO DEL ARTE=
+=IMPLANTACION O DESARROLLO DEL MODELO?=
+
+-describir el desarrollo completo de las tareas del proceso de evaluación
+-evaluación
+    -describir completamente la evaluación (informe MOSAQ)
+    -mostrar resultados y conclusiones de la evaluación
+
+=VALIDACION=
+
+-Según HA: opinión de expertos, micro-encuesta a ejecutivos para ver si
+modelo sirvió.
+
+=CONCLUSIONES=
+
+-conclusiones sobre el proceso en general y su utililidad.
+-hablar sobre facilidad y factibilidad de realizar este tipo de evaluaciones
+-la continuidad de desarrollo depende tanto de la mentenibilidad?
+-que otras cosas no se tomaron en cuenta
+-...
