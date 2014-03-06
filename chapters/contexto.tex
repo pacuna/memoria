@@ -38,7 +38,7 @@ enfoques que se pueden utilizar dentro de calidad:
     \item Enfoque basado en el usuario
     \item Enfoque de fabricación
     \item Enfoque basado en valor
-\end{enumerate}
+\end{itemize}
 
 El enfoque trascendente es el más difuso. Se refiere a la propiedad inherente
 e indefinible de un producto, con la cual cumple con una alta calidad. Podría
@@ -79,17 +79,62 @@ los clientes y usuarios. O por ejemplo, cuando se está construyendo el producto
 debemos concentrarno más en la fabricación, con el fín de asegurar que se está
 construyendo un producto adecuado con respecto a la especificación.
 
+\subsection{Calidad de procesos}
+Otra parte importante de calidad que es fuertemente estudiada es la calidad de 
+procesos. La principal idea detrás de este enfoque, es que mientras de más
+calidad sean los procesos, de más calidad serán los productos.
+
+Un estándar altamente utilizado en la calidad de procesos es la ISO 9000. La idea
+consiste en establecer un sistema de gestión de calidad en una compañía de
+manera que la calidad resultante del producto también sea alta. No tiene que ver
+directamente con la calidad del producto, sino con los requerimientos de calidad
+de la compañía que produce el producto. 
+La introducción de este tipo de estándares dentro de una compañía de software
+puede beneficiarla al hacer que los procesos de aseguramiento de calidad sean
+más explícitos y claros~\cite{Wagner:2013}.
+
+Otras iniciativas similares, que se enfocan específicamente en mejorar los
+procesos de desarrollo de software son CMMI y SPICE.
+Estos estándares se basan en la premisa de que existe un proceso ideal, 
+el cual es descrito en los estándares y que cada compañía debe alcanzar.
+Existen nivéles de madurez y de capacidad partiendo desde procesos caóticos,
+hasta procesos altamente estandarizados y optimizados.
+
+La utilización de este enfoque para evaluar continuidad de desarrollo sufre
+de ciertas carencias. Para empezar se parte con la premia de que mientras
+mejores sean los procesos, mejor será la calidad del producto. Esto quizás
+es claro en fabricación de productos, pero no tan claro en desarrollo de
+software. Por ejemplo en~\cite{Jones:2000:SAB:335582} se presenta una 
+investigación que buscaba la relación entre el nivel CMM (predeceso de CMMI) 
+de una compañía, y el número de defectos por punto de función entregado en sus productos.
+Como resultado se encontró que mientras el nivel aumentaba, los errores diminuían,
+lo cual confirmaría la premisa. Sin embargo en los extremos, las mejores
+compañías que estaban en nivel CMM 1 (el peor), producían software con menos
+defectos que las peores companías con CMM 5 (el mejor). Por lo tanto
+existe otros factores que estaban influyendo en la tasa de defectos.
+
+Es importante analizar la calidad de procesos para lograr entregar un producto
+de software de alta calidad, sin embargo como muchos otros factores influyen
+en la industria del software, este trabajo está más enfocado en estudiar
+la calidad del producto, y a través de esta calidad encontrar un modelo que
+permita evaluar también la continuidad de desarrollo.
+
 \section{Mantenibilidad}
 
 %sobre mantenibilidad
-La mantenibilidad también es un tema recurrente en ingeniería de software. Al igual que calidad, se compone de elementos
-subjetivos y que están sujetos al contexto del problema. Para medir la mantenibilidad de un producto de software, se suelen
-utilizar métricas cuantitativas y cualitativas. Estas métricas usualmente indican que tan mantenible es el producto. 
-Esto puede implicar diversos hechos, por ejemplo, que tan fácil es modificar el código fuente del software, que tan seguro
-es la modificación del código fuente sin dañar el funcionamiento correcto del sistema, que tan fácil es entender el código
+La mantenibilidad también es un tema recurrente en ingeniería de software.
+Al igual que calidad, se compone de elementos subjetivos y que están sujetos
+al contexto del problema. Para medir la mantenibilidad de un producto de
+software, se suelen utilizar métricas cuantitativas y cualitativas. Estas
+métricas usualmente indican que tan mantenible es el producto.
+Esto puede implicar diversos hechos, por ejemplo, que tan fácil es modificar
+el código fuente del software, que tan seguro es la modificación del código
+fuente sin dañar el funcionamiento correcto del sistema, que tan fácil es entender el código
 fuente del software con el fin de modificarlo o extenderlo, etc.
-Esta característica de calidad afecta generalmente a los desarrolladores, puesto que el usuario final no es afectado directamente
-por la buena calidad del código fuente, mientras el software cumpla con los requerimientos de usuario. Sin embargo es frecuente
-escuchar sobre proyectos que han debido ser paralizados producto de falta de calidad en su código, lo cual no permite seguir
+Esta característica de calidad afecta generalmente a los desarrolladores,
+puesto que el usuario final no es afectado directamente por la buena calidad
+del código fuente, mientras el software cumpla con los requerimientos de usuario.
+Sin embargo es frecuente escuchar sobre proyectos que han debido ser paralizados
+producto de falta de calidad en su código, lo cual no permite seguir
 manteniéndolo.
 
