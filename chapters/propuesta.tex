@@ -3,6 +3,7 @@
 
 %-utilización de un modelo de calidad
     %-ISO 25010
+    %por que se eligio?
         %-historia
         %-definiciones
         %-modelo completo
@@ -18,7 +19,40 @@ características y además entrega un conjunto de sub-características que sirve
 guiar la búsqueda de las métricas apropiadas.
 Estas métricas no están contenidas en el modelo y deben ser escogidas por los evaluadores, 
 encontrándose muchas de ellas en la literatura.
-En este trabajo se presentan las sub-características escogidas así como las 
-métricas elegidas para realizar las mediciones sobre un producto de software real, 
+Se presentarán las sub-características escogidas así como las 
+métricas para realizar las mediciones sobre un producto de software real, 
 con el fin de evaluar su mantenibilidad y así, entregar información acerca como afectaría
 su calidad en la continuidad de desarrollo por parte de terceros.
+
+\section{ISO/IEC 25010}
+
+Este estándar define~\cite{25010}:
+
+\begin{enumerate}
+\item Un modelo de \textbf{calidad en uso} compuesto de cinco características
+relacionadas con el resultado de la interacción cuando un producto es utilizado
+en un contexto de uso particular. Este modelo es aplicable al sistema
+humano-computador completo, incluyendo los sistemas computaciones en uso
+y los productos de software en uso.
+
+\item Un modelo de calidad de producto compuesto de 8 características relacionadas
+con las propiedades estáticas de un software y propiedades dinámicas de un sistema
+computacional. El modelo es aplicable a los sistemas computacionales y productos
+de software.
+
+Como en este caso se desea evaluar un producto de software, específicamente
+su mantenibilidad, no se utilizarán características del modelo para calidad
+en uso. Sólo se utilizará un conjunto del modelo para calidad de producto.
+El interés se enfocará en las propiedades estáticas del sistema, las cuales
+a través de su correctitud y adherencia a estándares y buenas prácticas, nos
+entregarán información acerca de la mantenibilidad del producto.
+
+A través de otros estándares contenidos en la serie ISO/IEC 25000, se generará
+un modelo de calidad y se implementará una evaluación real con la cual se 
+pueda certificar la continuidad de desarrollo.
+
+Se trabajará en conjunto con la empresa creadora del producto de software.
+Luego de la primera evaluación, se entregará la retroalimentación necesaria
+para lograr un nivel más alto de calidad en una evaluación final que permitirá
+certificar la mantenibilidad en base al modelo generado.
+\end{enumerate}
