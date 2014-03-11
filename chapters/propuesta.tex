@@ -10,11 +10,43 @@
         %-mantenibilidad
         %-otras características que puedan servir para el problema
 \chapter{Propuesta}
-En este trabajo se propone la generación de un modelo de calidad basado en el 
+
+La serie de estándares ISO/IEC 25000 se denomina SQuaRE (Software product
+Quality Requirements and Evaluation) y se compone de la siguientes divisiones~\cite{25000}:
+
+\begin{itemize}
+    \item ISO/IEC 2500n - División de Gestión de Calidad
+    \item ISO/IEC 2501n - División de Modelo de Calidad
+    \item ISO/IEC 2502n - División de Medición de Calidad
+    \item ISO/IEC 2503n - División de Requerimientos de Calidad
+    \item ISO/IEC 2504n - División de Evaluación de Calidad
+\end{itemize}
+
+Cada una de estas divisiones entrega estándares y guías para realizar
+el análisis de calidad correspondiente. 
+
+En SQuaRE se entregan:
+\begin{itemize}
+    \item Términos y definiciones
+    \item Modelos de referencia
+    \item Guía general
+    \item Guías individuales para cada división
+    \item Estándares para propósitos como especificación de requerimientos, 
+    planeación y gestión, medición y evaluación.
+\end{itemize}
+
+SQuaRE reemplaza a las series ISO/IEC 9126 y 14598.
+Para esta propuesta se utilizaron la división de Modelo de Calidad, de la cual
+se obtuvo un conjunto de características enfocadas en la mantenibilidad del 
+producto, y la división de Evaluación de Calidad, de la cual se obtuvieron
+guías para aplicar el modelo obtenido y hacer una evaluación de calidad
+sobre un producto de software real.
+
+Se propone la generación de un modelo de calidad basado en el 
 modelo ISO/IEC 25010, el cual estará enfocado en la mantenibilidad del producto 
 de software. Esta característica está directamente relacionada con la 
 continuidad de desarrollo del producto.
-El modelo ISO/IEC 25010 presenta la mantenibilidad como una de sus principales
+El modelo ISO/IEC 25010 presenta además la mantenibilidad como una de sus principales
 características y además entrega un conjunto de sub-características que sirven para
 guiar la búsqueda de las métricas apropiadas.
 Estas métricas no están contenidas en el modelo y deben ser escogidas por los evaluadores, 
@@ -24,6 +56,7 @@ métricas para realizar las mediciones sobre un producto de software real,
 con el fin de evaluar su mantenibilidad y así, entregar información acerca como afectaría
 su calidad en la continuidad de desarrollo por parte de terceros.
 
+%sobre ISO 25010
 \section{ISO/IEC 25010}
 
 Este estándar define~\cite{25010}:
@@ -56,3 +89,86 @@ Luego de la primera evaluación, se entregará la retroalimentación necesaria
 para lograr un nivel más alto de calidad en una evaluación final que permitirá
 certificar la mantenibilidad en base al modelo generado.
 \end{enumerate}
+
+\subsection{Modelo de Calidad de Producto}
+Este modelo se compone de las siguientes características y sub-características:
+
+\begin{itemize}
+\item Adecuación Funcional
+    \begin{itemize}
+        \item Completitud funcional
+        \item Correctitud funcional
+        \item Adecuidad funcional
+    \end{itemize}
+\item Eficiencia de desempeño
+    \begin{itemize}
+        \item Comportamiento en el tiempo
+        \item Utilización de recursos
+        \item Capacidad
+    \end{itemize}
+\item Compatibilidad
+    \begin{itemize}
+        \item Co-existencia
+        \item Interoperabilidad
+    \end{itemize}
+\item Usabilidad
+    \begin{itemize}
+        \item Reconocimiento de su adecuación
+        \item Capacidad de ser aprendido
+        \item Protección de error para el usuario
+        \item Estética de interfaz de usuario
+        \item Accesibilidad
+    \end{itemize}
+\item Confiabilidad
+    \begin{itemize}
+        \item Madurez
+        \item Disponibilidad
+        \item Tolerancia a fallos
+        \item Capacidad de recuperación
+    \end{itemize}
+\item Seguridad
+    \begin{itemize}
+        \item Confidencialidad
+        \item Integridad
+        \item No-repudio
+        \item Responsabilidad
+        \item Autenticidad
+    \end{itemize}
+\item Mantenibilidad
+    \begin{itemize}
+        \item Modularidad
+        \item Reusabilidad
+        \item Analizabilidad
+        \item Modificabilidad
+        \item Capacidad de pruebas
+    \end{itemize}
+\item Portabilidad
+    \begin{itemize}
+        \item Adaptabilidad
+        \item Instalabilidad
+        \item Capacidad de ser reemplazado
+    \end{itemize}
+\end{itemize}
+
+Este modelo es útil para especificar requerimientos, establecer mediciones y 
+realizar evaluación de calidad. Las características definidas pueden ser utilizadas
+como una lista de verificación para asegurar un tratamiento exhaustivo de
+los requerimientos de calidad.
+
+En la práctica es muy complicado medir todas las subcaracterísticas para un sistema
+o producto de software de gran tamaño. De esta manera, la importancia de las 
+características dependeran de los objetivos y metas del proyecto. El modelo
+debe ser adaptado antes de su uso como parte de la descomposición de requerimientos
+para identificar aquellas características y sub-características que son más
+importantes.
+
+Este trabajo se enfocará solamente en la continuidad de desarrollo del producto
+de software, por lo que la mayor cantidad de esfuerzo en las mediciones, se
+realizará en la características Mantenibilidad. Esta característica tiene
+una fuerte influencia en la calidad de uso para las personas que realizarán
+tareas de mantención en el software. Estas tareas no sólo serán de mantenimiento,
+sino también extender el software, arreglar defectos, realizar inspecciones
+de código, etc.
+
+En la siguiente sección se mostrará la implementación de la propuesta
+utilizando el modelo.
