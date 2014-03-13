@@ -1,0 +1,20 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\select@language {spanish}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Cohesi\IeC {\'o}n relacional\relax }}{27}{table.caption.18}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Principales tipos y su LCOM\relax }}{27}{table.caption.20}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Principales tipos y su LCOM HS\relax }}{28}{table.caption.22}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Top 10 de tipos y su acoplamiento eferente\relax }}{28}{table.caption.24}
+\contentsline {table}{\numberline {5.5}{\ignorespaces Top 10 de m\IeC {\'e}todos y su acoplamiento aferente\relax }}{29}{table.caption.26}
+\contentsline {table}{\numberline {5.6}{\ignorespaces Top 10 de m\IeC {\'e}todos y su complejidad ciclom\IeC {\'a}tica\relax }}{30}{table.caption.30}
+\contentsline {table}{\numberline {5.7}{\ignorespaces \IeC {\'I}ndice de mantenibilidad\relax }}{30}{table.caption.32}
+\contentsline {table}{\numberline {5.8}{\ignorespaces Clones de c\IeC {\'o}digo\relax }}{31}{table.caption.34}
+\contentsline {table}{\numberline {5.9}{\ignorespaces Elementos elegidos y su complejidad por m\IeC {\'e}todo\relax }}{32}{table.caption.37}
+\contentsline {table}{\numberline {5.10}{\ignorespaces Elementos elegidos y el match para profundidad seleccionado\relax }}{33}{table.caption.39}
+\contentsline {table}{\numberline {5.11}{\ignorespaces Elementos elegidos y el match para n\IeC {\'u}mero de par\IeC {\'a}metros seleccionado\relax }}{34}{table.caption.41}
+\contentsline {table}{\numberline {5.12}{\ignorespaces Cobertura de pruebas - porcentaje por criticidad\relax }}{41}{table.caption.52}
+\contentsline {table}{\numberline {5.13}{\ignorespaces Cobertura de pruebas - Cumplimiento\relax }}{41}{table.caption.53}

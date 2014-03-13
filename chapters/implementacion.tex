@@ -334,9 +334,10 @@ Los resultados de esta métrica se pueden ver en el cuadro~\ref{table:LOCM}.
 	\caption{Principales tipos y su LCOM}
     \label{table:LOCM}
 \end{table}
-
+\newpage
 
 \subsubsection{LCOM HS}
+Los datos del análisis para LCOM HS se observar en el cuadro~\ref{table:LOCMHS}
 \begin{table}[hb]
 \centering
     \begin{tabular}{|l|l|}
@@ -355,11 +356,11 @@ Los resultados de esta métrica se pueden ver en el cuadro~\ref{table:LOCM}.
     \label{table:LOCMHS}
 \end{table}
 
-Los datos del análisis para LCOM HS se observar en el cuadro~\ref{table:LOCMHS}
 
 \subsubsection{Acoplamiento eferente}
-
+Las mediciones para los $10$ tipos con mayor valor de acoplamiento eferente se pueden observar en el cuadro~\ref{table:EC}.
 \begin{table}[hb]
+    \small
 \centering
     \begin{tabular}{|l|l|}
     \hline
@@ -379,13 +380,13 @@ Los datos del análisis para LCOM HS se observar en el cuadro~\ref{table:LOCMHS}
     \label{table:EC}
 \end{table}
 
-Las mediciones para los $10$ tipos con mayor valor de acoplamiento eferente se pueden observar en el cuadro~\ref{table:EC}.
 
 \subsubsection{Acoplamiento aferente}
 
 Las mediciones para los $10$ tipos con mayor valor de acoplamiento aferente se pueden observar en el cuadro~\ref{table:AC}.
 
 \begin{table}[hb]
+    \footnotesize
 \centering
     \begin{tabular}{|l|l|}
     \hline
@@ -407,20 +408,19 @@ Las mediciones para los $10$ tipos con mayor valor de acoplamiento aferente se p
 \subsubsection{Código muerto}
 Total: \textbf{581 métodos}.
 
-La lista de métodos que no son llamados se encuentran en una hoja de cálculo adjunta.
-
 \subsubsection{Instabilidad}
 
 Para el cálculo de esta medida se utilizó el promedio del Top 10 de tipos con mayor acoplamiento eferente y el promedio del Top 10 de los tipos con mayor acoplamiento aferente. Estos valores se pueden obtener utilizando los datos de las tablas anteriores. A continuación se presenta el resultado.
 
 $$I = 30.2 / (30.2 + 102.3)$$
 $$I = 0.23$$
-
+\newpage
 \subsubsection{Complejidad ciclomática}
 
 En el cuadro~\ref{table:CC} se pueden observar los 10 métodos con mayor complejidad ciclomática.
 
 \begin{table}[hb]
+    \small
 \centering
     \begin{tabular}{|l|l|}
     \hline
@@ -441,21 +441,18 @@ En el cuadro~\ref{table:CC} se pueden observar los 10 métodos con mayor complej
 \end{table}
 
 
-\subsubsection{índice de mantenibilidad}
-
+\subsubsection{Índice de mantenibilidad} 
+En el cuadro~\ref{table:MI} se muestra el valor del índice de manteniblidad para el código de software.
 \begin{table}[hb]
 \centering
     \begin{tabular}{|l|l|}
     \hline
-    \bf{Nombre}      & \bf{índice de mantenibilidad} \\ \hline
+    \bf{Nombre}      & \bf{Índice de mantenibilidad} \\ \hline
     SaeFramework2013 & 93                              \\ \hline
     \end{tabular}
-    \caption{índice de mantenibilidad}
+    \caption{Índice de mantenibilidad}
     \label{table:MI}
 \end{table}
-
-En el cuadro~\ref{table:MI} se muestra el valor del índice de manteniblidad para el código de software.
-
 \newpage
 
 \subsubsection{Código duplicado}
@@ -466,6 +463,7 @@ intensidad de la duplicación encontrada, mientras que en la segunda columna el
 nombre de los archivos y las líneas donde se encontró el código duplicado.
 
 \begin{table}[hb]
+    \small
 \centering
 
   \begin{tabular}{ | l | l | }
@@ -567,6 +565,7 @@ En el cuadro~\ref{table:PN} se pueden observar los archivos y directorios
 seleccionados para la evaluación y su análisis respectivo del número de 
 parámetros en sus funciones. Para esta métrica se decidió utilizar un mínimo 
 de 5 parámetros para considerar un elemento como peligroso.
+\newpage
 \begin{table}[hb]
 \centering
     \begin{tabular}{|l|l|}
@@ -843,7 +842,7 @@ Con esta información podemos concluir que esta característica se cumple correc
 \begin{table}[hb]
 \centering
     \begin{tabular}{llllll}
-    ~               &  		Total &  		Faltan &  		\% Real &  		\% Meta & Cumple? \\
+    ~               &  		Total &  		Faltan &  		\% Real &  		\% Meta & ¿Cumple? \\
      		Críticas:    &  		12    & 0         &  		100.00 &  		100.00 &  		SI    \\
      		Importantes: &  		28    & 0         &  		100.00 &  		80.00  &  		SI    \\
      		Deseables:   &  		101   & 0         &  		100.00 &  		40.00  &  		SI    \\
