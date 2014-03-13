@@ -1,19 +1,18 @@
 %como se armó el modelo
 \chapter{Implementación}
-Para evaluar un producto de software utilizando el modelo ISO/IEC 25010, se debe escoger un conjunto
-de características de las principales que lo componen. Estas características deben ser escogidas de acuerdo
+Para evaluar un producto de software utilizando el modelo ISO/IEC 25010, se debe escoger un sub-conjunto
+de características de las principales que lo componen. Estas deben ser escogidas de acuerdo
 al motivo de la evaluación y deben ser acordes al contexto del producto.
 
 Como se mencionó previamente, la continuidad de desarrollo de un producto de software está directamente
-ligada con la mantenibilidad de este producto, puesto que la calidad de su código fuente va a incidir
-en el trabajo posterior de los desarrolladores, más aún si estos no tienen conocimiento previo del sistema
-(terceros).
+ligada con la mantenibilidad del producto, puesto que la calidad de su código fuente va a incidir
+en el trabajo posterior de los desarrolladores, más aún si estos no tienen conocimiento previo del sistema.
 
 Para realizar esta elección, la ISO/IEC provee guías con una serie de consejos para definir correctamente
-un plan de calidad, partiendo por la elección de características y finalizando con la análisis de la evaluación
-propiamente tal. Estas guías se pueden encontrar el división ISO/IEC 25040~\cite{25040}, la cual corresponde a la división
-de evaluación de calidad. En esta división provee requerimientos, recomendaciones y guías para
-la evaluación de un producto de software ya sean realizadas por evaluadores independientes, adquirientes o
+un plan de calidad, partiendo por la elección de características y finalizando con el análisis de la evaluación
+propiamente tal. Estas guías se pueden encontrar en la división ISO/IEC 25040~\cite{25040}, la cual corresponde a la división
+de evaluación de calidad. Esta provee requerimientos, recomendaciones y guías para
+la evaluación de un producto de software ya sean realizadas por evaluadores independientes, adquisidores o
 desarrolladores. También se presenta un apoyo para documentar una medición como un módulo de evaluación.
 
 Los principales hitos dentro de este proceso se pueden resumir en:
@@ -25,7 +24,7 @@ Los principales hitos dentro de este proceso se pueden resumir en:
     \item Concluir la evaluación
 \end{enumerate}
 
-La ejecución de estas tareas se describe a continuación.
+La ejecución de estas tareas en un producto de software real se describe a continuación.
 
 \section{Requerimientos de la evaluación}
 
@@ -772,7 +771,7 @@ se recomienda para analizar el código del lado cliente.
 
 \section{Evaluación final para SAEFramework Servidor}
 La evaluación final se realizó utilizando la versión más reciente del producto 
-SAE Framework Servidor. Para esta evauación se incluyen además observaciones 
+SAE Framework Servidor. Para esta evaluación se incluyen además observaciones 
 con respecto a otras características no incluidas en la primera evaluación y 
 que corresponden a Instalabilidad y la sub-característica capacidad de pruebas. 
 Esta última comenzó a ser implementada durante el transcurso de la evaluación
@@ -822,41 +821,6 @@ que MOSAQ ha decidido implementar esta propuesta.
 Inicialmente se tenía un 0\% de cobertura de pruebas y durante el desarrollo de la evaluación, el equipo Toeska entregó un plan para comenzar a implementar
 módulos de pruebas y un ambiente de testing para el equipo de desarrollo.
 
-Basado en este plan, se desglosaron las siguientes partes: 
-\subsubsection{Estrategia de prueba implementada}
-
-Se seleccionaron pruebas de integración a nivel de librerías Javascript que 
-integran tanto a nivel de lógica de negocio, como acceso a la base de datos. 
-Dado que los servicios enmascaran varias capas, en el desarrollo de las pruebas 
-se utilizaron técnicas de caja negra para evaluar el correcto funcionamiento 
-de los servicios.
-
-Además para asegurar mantenibilidad era necesario que las pruebas fueran 
-reproducibles y automatizables, por lo cual se escribieron casos de pruebas en 
-Javascript utilizando el framework Qunit.
-
-Se definió un ambiente de pruebas para poder ejecutar las pruebas, tanto a 
-nivel de aplicación como de base de datos. Se estableció una base de datos con 
-los datos básicos necesarios para ejecutar las pruebas, la cual se puede 
-modificar tanto por las pruebas en si como algún prerrequisito de las pruebas.
-
-Además de la capa de datos de pruebas, la aplicación quedó parametrizable para 
-poder ejecutarse en alguna base de datos en particular o la base de datos de 
-pruebas descrita anteriormente.
-
-
-\subsubsection{Elementos necesarios para las pruebas}
-
-\begin{itemize}
-\item Base de datos de pruebas
-\item Aplicación servidor de SAE en IIS (Internet Information Services)
-\item Aplicación cliente de SAE
-\item Usuario \textit{admin} autenticado
-\end{itemize}
-
-
-
-\subsubsection{Criterios de aprobación y Resultados}
 Se clasificaron diferentes servicios y sus respectivas pruebas de acuerdo a su criticidad.
 En el cuadro~\ref{table:CBPC} se puede observar el total de pruebas para cada 
 categoría, mientras que en el cuadro~\ref{table:CBC} se presenta el cumplimiento 
@@ -962,5 +926,3 @@ software alcanza un alto nivel y cumple con los estándares necesarios para
 certificar el producto de acuerdo al modelo. Esta certificación incluye 
 características pertenecientes al modelo ISO/IEC 25010 así como el plan de 
 acción para mejorar la capacidad de pruebas, el control de versiones y la documentación.
-
-\section{Conclusiones de la evaluación}
