@@ -1,0 +1,531 @@
+\documentclass[letterpaper]{article}
+\usepackage{natbib,alifeconf}
+\usepackage[utf8]{inputenc}
+\title{Modelo de calidad para evaluar continuidad de desarrollo}
+\author{Pablo Acuña\\
+\mbox{}\\
+Universidad Técnica Federico Santa María \\
+pacuna@alumnos.inf.utfsm.cl}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+	En este trabajo se presenta un modelo de calidad para evaluar la continuidad de desarrollo de un
+	producto de software. El enfoque utilizado consiste en certificar el grado de mantenibilidad del
+	producto utilizando el modelo ISO/IEC 25010 para verificar el buen cumplimiento de los estándares
+	de calidad con respecto a esta característica.
+\end{abstract}
+
+\section{Introducción}
+
+\section{Contexto}
+% mini calidad
+% mini mantenibilidad
+La calidad de Software es uno de los temas más relevantes en la industria actual. Muchos de estos productos
+son de alto impácto y su correcto funcionamiento es crítico en muchas actividades. Este correcto funcionamiento
+puede ser descrito a través de un gran número de características y subcaracterísticas, las cuales al ser agrupadas
+de una manera sistemática, conforman los modelos de calidad. Una de estas características es la Mantenibilidad, y ligada
+a esta se encuentra la continuidad de desarrollo. Estos elementos son indicadores de como el producto puede lidiar
+con los siguientes problemas:
+\begin{enumerate}
+	\item qué tan fácil es la modificación del producto por parte de terceros
+	\item qué tan fácil es analizar el producto de software
+	\item que tan fácil es extender el producto de software una vez terminado el desarrollo principal
+	\item que tan completa es la capacidad de pruebas del producto
+	\item que tan modular es el producto de software
+	\item qué tanto reuso de código ocurre dentro del producto
+\end{enumerate}
+
+Para evaluar y mejorar la continuidad de desarrollo de un producto a través de su mantenibilidad, se pueden optar por
+varias alternativas, siendo las principales utilizar algún modelo de calidad o utilizar algún modelo de madurez de procesos.
+Los modelos de calidad han sido utilizados en la industria del software desde hace varias décadas, encontrándose varios
+enfoques en la literatura. Por otra parte el estudio de la madurez de procesos también puede ser utilizado para
+evaluar mantenibilidad pero con un menor grado de confianza~\cite{Jones:2000:SAB:335582}
+
+\section{Problema}
+La continuidad de desarrollo es un elemento que toma mayor importancia cuando el producto de software debe ser
+continuado por terceros. Al decir continuado se incluyen actividades como modificación, manejo de defectos, desarrollo
+de extensiones, análisis de código, etc. Cuando la mantenibilidad del producto es baja, todas estas tareas se vuelven
+complicadas, llegando al punto en que puede peligrar la contuinidad de este mismo.
+
+Los modelos de calidad si bien entregan una buena fuente de características y subcaracterísticas a evaluar dentro
+de un producto de software, deben ser adaptadas para contextos específicos y para las características que gozen de una
+mayor importancia en este contexto. De esta manera, si deseamos evaluar la continuidad de desarrollo, y además definimos
+a la mantenibilidad como la principal característica que influye en esta contuinidad, debemos utilizar un modelo y adaptarlo
+para que aplicación sea efectiva.
+
+Una vez que se define el modelo y su adaptación específica a un contexto, se deben definir las métricas necesarias que entregarán
+la retroalimentación para certificar el grado de cumplimiento con las subcaracterísticas a evaluar. Estas métricas
+se encuentran dispersas en la literatura y deben escogerse metódicamente para constituir una evaluación acorde al contexto.
+En resumen, el problema principal en este trabajo consiste en cómo adaptar un modelo de calidad para evaluar la mantenibilidad
+de un producto de software, tomando en cuenta las subcaracterísticas y métricas necesarias para estudiar su continuidad de
+desarrollo por parte de terceros.
+
+\section{Estado del Arte}
+Como se mencionó previamente, el modelo de evaluación para continuidad de desarrollo
+ de este trabajo en particular está basado en un modelo de calidad. Otra opción hubiese sido presentar un modelo
+de madurez de procesos basado por ejemplo en CMMI o SPICE. La elección se debe
+principalmente a la cantidad de referencias que podemos encontrar en la literatura
+con respecto a como es mejor evaluar y crear buenos planes de calidad que mejoren la mantenibilidad
+del producto de software. Al estudiar esta literatura se encontró que la gran mayoría
+de trabajos exponen visiones e ideas que convergen en modelos de calidad típicos, más
+que en modelos de mejoramiento de procesos.
+Dicho esto, el estudio de modelos de madurez puede ser un excelente complemento a los modelos de
+calidad basado en métricas de software y cualquier empresa que desee llevar sus productos
+y procesos al siguiente nivel, debería estudiarlos.
+
+A través de los años, se han ido presentando diversas propuestas para aplicar modelos
+de calidad con el fín de evaluar la mantenibilida de software. Algunos trabajos
+notables son: \cite{Coleman:1994} y \cite{Oman:1992}. Cabe mencionar que no todos estos trabajos
+están basado puramente en asignar valores a rangos de métricas, si no también
+contienen modelos matemáticos complejos tales como modelos de regresión polinomial,
+medidas de complejidad basadas en entropía, análisis de componentes principales, 
+análisis de factores, etc.
+En algunos trabajos se presentan métodos que aún prevalecen y son importantes en
+la industria del software actual, por ejemplo el índice de mantenibilidad (MI) 
+presentado en \cite{West:1996}.
+Otros autores intentan definir las principales características que influyen en la
+mantenibilidad de un producto de software. De trabajos como \cite{survey} se obtienen
+características que forman parte de modelos actuales tales como la modificabilidad,
+estabilidad, capacidad de pruebas, modularidad, etc. Estas características son 
+tomadas luego por modelos como el presentado en la ISO 9126, modelo de Boehm, 
+modelo de McCall, etc.
+Estudios relacionados con orientación a objetos son \cite{roadmap}, \cite{pastDecade} y \cite{TowardsACatalog}. Estos trabajos
+están enfocados en evaluar software orientado a objetos utilizando diversos
+métodos.
+Todos estos distintos trabajos han servido para ir refinando cada vez los modelos
+más utilizados actualmente, dandole mayor importancia a la características que 
+afectan de manera más directa y que son mas universales a través de los distintos
+productos y contextos en la industria.
+
+\section{Propuesta}
+
+La propuesta presentada en este trabajo consiste en la refinación de un modelo
+de calidad basado en la serie ISO 25000, específicamente el modelo presentado
+en la subdivisión 25010 (división de modelo de calidad). 
+Este modelo servirá como base para definir una evaluación acorde al contexto
+de un producto de software en específico así como para generar una evaluación
+que permita certificar los estándares de calidad con respecto a la mantenibilidad
+de este producto.
+
+\subsection{ISO 25000}
+Esta división de la ISO es también conocida como SQuaRE (Software product
+quality Requirements and Evaluation) y se compone de 5 subdivisiones:
+\begin{itemize}
+    \item ISO/IEC 2500n - División de Gestión de Calidad
+    \item ISO/IEC 2501n - División de Modelo de Calidad
+    \item ISO/IEC 2502n - División de Medición de Calidad
+    \item ISO/IEC 2503n - División de Requerimientos de Calidad
+    \item ISO/IEC 2504n - División de Evaluación de Calidad
+\end{itemize}
+
+Cada una de estas subdiviones entrega guías para tareas específicas dentro
+de los procesos de evaluación de software. 
+Para nuestro caso, daremos importancia sólo a las subdiviones 2501n la cual
+entrega el modelo de calidad completo con sus características y subcaracterísticas
+y a la división 2504n que entrega guías para confeccionar correctamente una
+evaluación de calidad basada en el modelo principal.
+De esta manera se tomará el modelo completo y se creará un submodelo que permita
+evaluar específicamente la mantenibilidad del software. 
+El modelo ISO/IEC 25010 presenta a la mantenibilidad como una de sus 8 características
+principales, por lo que facilita la elección de las subcaracterísticas al ser
+entregadas junto al modelo. 
+Esta característica se compone de las siguientes subcaracterísticas:
+
+\begin{itemize}
+	\item Modularidad
+	\item Reusabilidad
+	\item Analizabilidad
+	\item Modificabilidad
+	\item Capacidad de pruebas
+\end{itemize}
+
+Con estas subcaracterísticas en mente, se puede comenzar a realizar la elección
+de métricas que las describirán y que permitirán asignar valores reales a un 
+producto de software. 
+
+El modelo será aplicado sobre un software real con fines de estudio. Se entregarán
+recomendaciones para mejorar los números arrojados por la primera evaluación y 
+luego se realizará una evaluación final para certificar el buen grado de mantenibilidad.
+
+Los principales hitos dentro del proceso de evaluación se pueden resumir en:
+\begin{enumerate}
+    \item Establecer los requerimientos de la evaluación
+    \item Especificar la evaluación
+    \item Diseñar la evaluación
+    \item Ejecutar la evaluación
+    \item Concluir la evaluación
+\end{enumerate}
+Estos hitos son obtenidos de la subdivisión 2504n y adaptados llevar a cabo
+una evaluación por parte de evaluadores independientes.
+
+Estas tareas deben ser llevadas a cabo siempre tomando en cuenta el contexto
+del producto de software, ya que no existen requerimientos de calidad universales,
+sin embargo se puede generar un submodelo para evaluar específicamente la mantenibilidad
+de un producto de software en general, y a través de este obtener retroalimentación
+y análisis para estudiar de mejor manera la calidad del producto.
+
+A continuación se presenta un ejemplo resumido de las tareas previas a la ejecución,
+llevadas a cabo sobre un producto de software real.
+
+\subsection{Establecer los requerimientos de la evaluación}
+
+Se desea evaluar el producto de software SAE de la empresa MOSAQ con el fin de
+elaborar un plan de calidad que permita cerrar brechas en torno a temas de 
+mantenibilidad de su producto. A través de esta evaluación se acreditará que la 
+empresa utilizó un conjunto de buenas prácticas para construir el software y que 
+éste puede ser mantenido y modificado por terceros en el caso que fuese necesario.
+
+\subsection{Especificar la evaluación}
+La selección de métricas para cada subcaracterística consiste en:
+\begin{itemize}
+\item Modularidad
+	\begin{itemize}
+		\item Cohesión Relacional
+		\item LCOM (Falta de cohesión en métodos)
+		\item LCOM HS(Falta de cohesión en métodos Henderson-Sellers)
+		\item Acoplamiento Eferente
+		\item Acomplamient Aferente
+	\end{itemize}
+\item Reusabilidad
+	\begin{itemize}
+		\item Cantidad de Código Duplicado
+	\end{itemize}
+\item Modificabilidad
+	\begin{itemize}
+		\item Instabilidad
+		\item Complejidad Ciclomática 
+		\item Índice de Mantenibilidad
+        \item Produndidad (lado cliente)
+        \item Número de parámetros por función (lado cliente)
+	\end{itemize}
+\item Capacidad de pruebas
+	\begin{itemize}
+		\item Cubrimiento de pruebas de funciones críticas y no críticas
+	\end{itemize}
+\end{itemize}
+\subsection{Diseñar la evaluación}
+
+Para llevar a cabo las mediciones, MOSAQ hizo entrega de las fuentes principales de su software, 
+los cuales bajo un acuerdo de confidencialidad, fueron analizados por parte del equipo evaluador.
+
+Para el código fuente del lado servidor se utilizaron las siguientes herramientas:
+
+\begin{itemize}
+	\item NDepend v5.0.0.8085\footnote{http://www.ndepend.com}
+	\item Visual Studio 2013 Code Metrics\footnote{http://msdn.microsoft.com/en-us/library/bb385914.aspx}
+	\item Visual Studio 2012 Code Clone Analysis\footnote{http://msdn.microsoft.com/en-us/library/hh205279.aspx}
+\end{itemize}
+
+Mientras que para el código de lado cliente se utilizó:
+\begin{itemize}
+	\item SonarQube\footnote{http://www.sonarqube.org/}
+	\item JsHint v2.1.11\footnote{http://www.jshint.com/}
+	\item WebStorm v7 Inspection tools\footnote{http://www.jetbrains.com/webstorm/}
+\end{itemize}
+
+El plan de actividades consiste básicamente en:
+\begin{itemize}
+	\item Realizar las mediciones sobre el código fuente del producto
+	\item Presentar los resultados de la primera evaluación, los puntos
+	donde se encontraron las principales brechas y guías
+	para resolver los aspectos críticos encontrados
+	\item Realizar una evaluación final para certificar la correctitud
+	del software con respecto a la mantenibilidad.
+\end{itemize}
+
+\section{Validación}
+En esta sección se presentarán algunos de los resultados obtenidos en la
+primera evaluación del producto. El software tiene 2 componentes principales,
+SAEFramework Servidor y SAEFramework Cliente. Debido a las diferentes tecnologías
+utilizadas en la construccińo de estos módulos, se realizó la evaluación por
+separado, tomando además en cuenta que algunas métricas sólo aplican para uno
+de los módulos.
+
+\subsection{Resultados de la primera evaluación}
+
+\subsubsection{Cohesión Relacional}
+
+Los resultados para esta métrica se pueden observar en el cuadro número~\ref{table:CR}.
+
+\begin{table}
+    \centering
+\tiny
+    \begin{tabular}{|l|l|l|}
+    \hline
+       \bf{Assemblies}       & \bf{Cohesión Relacional} & \bf{Nombre}           \\ \hline
+       SaeFramework2013 & 1.4                   & SaeFramework2013 \\ \hline
+    \end{tabular}
+    \caption{Cohesión relacional}
+    \label{table:CR}
+\end{table}
+
+\subsubsection{LCOM}
+
+Los resultados de esta métrica se pueden ver en el cuadro~\ref{table:LOCM}.
+
+\begin{table}
+    \centering
+\tiny
+    \begin{tabular}{|l|l|}
+    \hline
+    \bf{Nombre}                                                         & \bf{LCOM}    \\ \hline
+       Mosaq.SaeFramework.v2013.Vistas.ListadoAuditoriaTicket      &    0.97 \\ \hline
+       Mosaq.SaeFramework.v2013.Negocio.CreacionOSTicket           &    0.82 \\ \hline
+       Mosaq.SaeFramework.v2013.Negocio.EdicionTicket              &    0.78 \\ \hline
+       Mosaq.SaeFramework.v2013.Datos.Conector                     &    0.68 \\ \hline
+       Mosaq.SaeFramework.v2013.Negocio.ManutencionCentroCosto     &    0.5  \\ \hline
+       Mosaq.SaeFramework.v2013.Negocio.ManutencionCoberturaSitios &    0.42 \\ \hline
+       Mosaq.SaeFramework.v2013.Negocio.ManutencionZonas           &    0.42 \\ \hline
+    \end{tabular}
+	\caption{Principales tipos y su LCOM}
+    \label{table:LOCM}
+\end{table}
+
+\subsubsection{Acoplamiento eferente}
+Las mediciones para los $10$ tipos con mayor valor de acoplamiento eferente se pueden observar en el cuadro~\ref{table:EC}.
+\begin{table}
+    \centering
+\tiny
+    \begin{tabular}{|l|l|}
+    \hline
+    \bf{Nombre}                                                    & \bf{Tipos que utiliza} \\ \hline
+       Mosaq.SaeFramework.v2013.Vistas.ConsultaVistas              &    89                  \\ \hline
+       Mosaq.SaeFramework.v2013.Negocio.TicketAcciones             &    34                  \\ \hline
+       Mosaq.SaeFramework.v2013.Negocio.ReglasNegocio              &    28                  \\ \hline
+       Mosaq.SaeFramework.v2013.Negocio.CreacionOSTicket           &    22                  \\ \hline
+       Mosaq.SaeFramework.Utilidades.TypeMap                       &    26                  \\ \hline
+       Mosaq.SaeFramework.v2013.Datos.Conector                     &    24                  \\ \hline
+       Mosaq.SaeFramework.v2013.Utilidades.Utilidades              &    21                  \\ \hline
+       Mosaq.SaeFramework.v2013.Standard.CmdbComponentes           &    20                  \\ \hline
+       Mosaq.SaeFramework.v2013.Standard.GruposResolutoresEmpresas &    19                  \\ \hline
+       Mosaq.SaeFramework.v2013.Standard.ZonasEmpresas             &    19                  \\ \hline
+    \end{tabular}
+    \caption{Top 10 de tipos y su acoplamiento eferente}
+    \label{table:EC}
+\end{table}
+
+\subsubsection{Instabilidad}
+
+Para el cálculo de esta medida se utilizó el promedio del Top 10 de tipos con mayor acoplamiento eferente y el promedio del Top 10 de los tipos con mayor acoplamiento aferente. Estos valores se pueden obtener utilizando los datos de las tablas anteriores. A continuación se presenta el resultado.
+
+$$I = 30.2 / (30.2 + 102.3)$$
+$$I = 0.23$$
+\subsubsection{Complejidad ciclomática}
+
+En el cuadro~\ref{table:CC} se pueden observar los 10 métodos con mayor complejidad ciclomática.
+
+\begin{table}
+    \centering
+\tiny
+    \begin{tabular}{|l|l|}
+    \hline
+    \bf{Nombre}                                                                          & \bf{Complejidad ciclomática} \\ \hline
+       Vistas.ConsultaVistas.Lista                              &    77                          \\ \hline
+       Negocio.TicketAcciones.Transferir                        &    10                          \\ \hline
+       Negocio.TicketAcciones.ReabrirTicket                     &    8                           \\ \hline
+       Negocio.TicketAcciones.Recatalogar                       &    5                           \\ \hline
+       Negocio.TicketAcciones.ProgramarFechaAtencion            &    4                           \\ \hline
+       Negocio.CreacionOSTicket   .grabarYcalcularFechasTickets &    4                           \\ \hline
+       Utilidades.Validadores.digitoVerificador                       &    5                           \\ \hline
+       Utilidades.StringEnum.Parse                              &    5                           \\ \hline
+       Utilidades.Utilidades.IEnumerableToDataTable        &    5                           \\ \hline
+       Datos.Conector.ejecutarProcedimientoCadenaAnidada     &    4                           \\ \hline
+    \end{tabular}
+    \caption{Top 10 de métodos y su complejidad ciclomática}
+    \label{table:CC}
+\end{table}
+
+
+\subsubsection{Índice de mantenibilidad} 
+En el cuadro~\ref{table:MI} se muestra el valor del índice de mantenibilidad para el código de software.
+\begin{table}
+    \centering
+\tiny
+    \begin{tabular}{|l|l|}
+    \hline
+    \bf{Nombre}      & \bf{Índice de mantenibilidad} \\ \hline
+    SaeFramework2013 & 93                              \\ \hline
+    \end{tabular}
+    \caption{Índice de mantenibilidad}
+    \label{table:MI}
+\end{table}
+
+\subsubsection{Complejidad Ciclomática lado cliente}
+
+En el cuadro~\ref{table:JSCC} se pueden observar los archivos y directorios 
+seleccionados para la evaluación, así como su respectiva complejidad por método.
+\begin{table}
+    \centering
+\tiny
+    \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Archivo/Directorio}            & \textbf{Complejidad por método} \\ \hline
+    app.js                        & 4.1                    \\ \hline
+    BasePrincipal.js              & 3.0                    \\ \hline
+    app/controllers/debug         & 1.2                    \\ \hline
+    app/controllers/admin         & 1.7                    \\ \hline
+    app/controllers/laboratorio   & 1.0                    \\ \hline
+    app/controllers/main          & 1.9                    \\ \hline
+    app/controllers/ordenservicio & 1.7                    \\ \hline
+    app/controllers/tickets       & 2.2                    \\ \hline
+    app/connection/wcf.js         & 4.1                    \\ \hline
+    app/services/services.js      & 1.8                    \\ \hline
+    \end{tabular}
+    \caption{Elementos elegidos y su complejidad por método}
+    \label{table:JSCC}
+\end{table}
+
+\subsubsection{Profundidad (lado cliente)}
+En el cuadro~\ref{table:depth} se pueden observar los archivos y directorios 
+seleccionados para la evaluación y su análisis respectivo de profundidad. Se 
+eligió utilizar un valor de 5 como mínimo para que el 
+elemento comience a ser crítico.
+\begin{table}
+    \centering
+\tiny
+    \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Archivo/Directorio}            & \textbf{Profundidad}                 \\ \hline
+    app.js                        & Sin profundidad mayor que 5 \\ \hline
+    BasePrincipal.js              & Sin profundidad mayor que 5 \\ \hline
+    app/controllers/debug         & Sin profundidad mayor que 5 \\ \hline
+    app/controllers/admin         & Sin profundidad mayor que 5 \\ \hline
+    app/controllers/laboratorio   & Sin profundidad mayor que 5 \\ \hline
+    app/controllers/main          & Sin profundidad mayor que 5 \\ \hline
+    app/controllers/ordenservicio & Sin profundidad mayor que 5 \\ \hline
+    app/controllers/tickets       & Sin profundidad mayor que 5 \\ \hline
+    app/connection/wcf.js         & Sin profundidad mayor que 5 \\ \hline
+    app/services/services.js      & Sin profundidad mayor que 5 \\ \hline
+    \end{tabular}
+    \caption{Elementos elegidos y el match para profundidad seleccionado}
+    \label{table:depth}
+\end{table}
+\subsubsection{Número de parámetros (lado cliente)}
+
+En el cuadro~\ref{table:PN} se pueden observar los archivos y directorios 
+seleccionados para la evaluación y su análisis respectivo del número de 
+parámetros en sus funciones. Para esta métrica se decidió utilizar un mínimo 
+de 5 parámetros para considerar un elemento como peligroso.
+\begin{table}
+    \centering
+\tiny
+    \begin{tabular}{|l|l|}
+    \hline
+    Archivo/Directorio            & Número de parámetros \\ \hline
+    app.js                        & No sobrepasa             \\ \hline
+    BasePrincipal.js              & No sobrepasa             \\ \hline
+    app/controllers/debug         & No sobrepasa             \\ \hline
+    app/controllers/admin         & No sobrepasa             \\ \hline
+    app/controllers/laboratorio   & No sobrepasa             \\ \hline
+    app/controllers/main          & No sobrepasa             \\ \hline
+    app/controllers/ordenservicio & No sobrepasa             \\ \hline
+    app/controllers/tickets       & No sobrepasa             \\ \hline
+    app/connection/wcf.js         & No sobrepasa             \\ \hline
+    app/services/services.js      & No sobrepasa             \\ \hline
+    \end{tabular}
+    \caption{Elementos elegidos y el match para número de parámetros seleccionado}
+    \label{table:PN}
+\end{table}
+
+\subsection{Retroalimentación luego de la evaluación (lado servidor)}
+
+El primer valor analizado es el de Cohesión relacional. El valor para este análisis es de 1.4. Este resultado se
+encuentra dentro del rango considerado como correcto para una aplicación. Valores
+más altos podrían indicar sobre-acoplamiento ya que la cohesión relacional nos entrega un promedio de relaciones internas por tipo dentro de un
+paquete. Un paquete debe tener sus clases fuertemente relacionadas y estas no deberían estar relacionadas de manera
+considerable con clases externas. 
+
+La siguientes métrica corresponden a LCOM. Para esta medida existen rangos definidos que son considerados como correctos para un conjunto de tipos.
+
+Se deben analizar los tipos que tengan un valor mayor a 0.8. En este caso existen 
+2 tipos que sobrepasan ese valor. Estos tipos son:
+\begin{itemize}
+\item CreacionOSTicket (Clase)
+\item ListadoAuditoriaTicket (Clase)	
+\end{itemize}
+
+Se han analizado estas clases y se concluyó que no es necesario realizar 
+cambios sobre ellas ya que sólo están compuestas por \textit{getters} 
+y \textit{setters}. Las clases de este estilo no son correctamente evaluadas 
+por esta métrica ya que no tienen un comportamiento definido por relaciones 
+entre sus métodos.
+
+El valor de \textbf{acoplamiento eferente} podría revelar tipos que tienen 
+muchas responsabilidades. Mientras mayor sea este valor, más entrelazado está 
+el tipo con otras implementaciones. Si bien los valores obtenidos no son altos, 
+se recomienda analizar los primeros tipos y verificar si pueden ser más modularizados.
+
+
+El valor de \textbf{instabilidad} es de 0.23. Este valor puede variar entre 
+0 y 1, donde 0 indica un paquete completamente estable y 1 un paquete 
+completamente inestable. El valor obtenido en este caso es bastante aceptable 
+e indica que el software se encuentra en un estado estable y tiene una buena 
+modificabilidad. Cabe mencionar que este valor se obtiene analizando las 
+métricas de acoplamiento descritas anteriormente, de esta manera este valor 
+esta relacionado con el nivel de acoplamiento en el sistema.
+
+Para estudiar la \textbf{complejidad ciclomática} se muestra una tabla con 
+el top 10 de los métodos con la mayor complejidad. El estándar indica
+que un método con una complejidad ciclomática mayor a 30 puede 
+ser demasiado complejo y se debe estudiar la posibilidad de dividirlo en 
+métodos más pequeños a menos que corresponda a código generado.
+En este caso el análisis arrojó sólo un método con un valor superior a 30, 
+el cual es \textbf{Listar()} dentro de \textbf{Mosaq.SaeFramework.v2013.Vistas.ConsultaVistas}.
+Se analizó este método y se puede observar de que contiene un \textit{switch} 
+con un gran número de \textit{cases}. Este \textit{switch} es el que genera 
+un aumento en la complejidad ciclomática. Por lo tanto se recomienda estudiar 
+este método y buscar alguna manera de refactorizar para obtener un código 
+más mantenible. Algunas opciones para refactorizar un \textit{switch} 
+se basan en utilizar diccionarios, mapas o simplemente separar las enumeraciones 
+en sus propias clases.
+
+El valor obtenido para el \textbf{índice de mantenibilidad} es de 93. Este 
+valor puede estar entre 0 y 100 y mientras más alto indica una mejor 
+mantenibilidad. En este caso el valor sugiere que el software es altamente 
+mantenible bajo los estándares de esta métrica.
+
+\subsection{Segunda evaluación}
+Durante la segunda evaluación, se volvió a analizar el código fuente de ambos
+módulos principales para determinar que las brechas encontradas fueran cerradas
+correctamente. Se encontró que el software había sido mejorado y cumplía con
+los estándares necesarios para ser certificado por el grupo evaluador.
+
+Cabe mencionar que este trabajo sólo presenta una parte de la evaluación así
+como algunos de los resultados. Para mayor información acerca de la aplicación completa
+así como retroalimentación para el lado cliente, ver el informe de evaluación.
+
+\section{Conclusiones}
+
+
+%\begin{figure}[!htb]
+%\begin{center}
+%\includegraphics[width=2in]{lion.png}
+%\caption{Sample picture caption.}
+%\label{fig1}
+%\end{center}
+%\end{figure}
+
+
+%\begin{table}[!hbt]
+%\center{
+%\begin{tabular}{|c|c|c|}\hline
+%One & Two & Three\\ \hline\hline
+%Yes & 0 & 1 \\
+%Not  & 1 & 0 \\
+%Maybe & 0.5 & 0.5 \\ \hline
+%\end{tabular}
+%}
+%\vskip 0.25cm
+%\caption{Sample table caption.}
+%\end{table}
+
+
+\footnotesize
+\bibliographystyle{apalike}
+\bibliography{sample}
+
+
+\end{document}

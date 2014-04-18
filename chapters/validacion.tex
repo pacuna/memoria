@@ -1,7 +1,137 @@
 %como se armó el modelo
 \chapter{Validación}
+
+En esta sección se presenta la aplicación del framework para evaluar mantenibilidad
+sobre un producto de software real. Se parte definiendo las tareas correspondientes
+al proceso de evaluación, para luego continuar con la ejecución de la evaluación
+utilizando el modelo presentado en la propuesta.
+
+\section{Requerimientos de la evaluación}
+
+\subsection{Propósito de la evaluación}
+
+Se desea evaluar el producto de software SAE de la empresa MOSAQ con el fin de
+elaborar un plan de calidad que permita cerrar brechas en torno a temas de 
+mantenibilidad de su producto. A través de esta evaluación se acreditará que la 
+empresa utilizó un conjunto de buenas prácticas para construir el software y que 
+éste puede ser mantenido y modificado por terceros en el caso que fuese necesario.
+
+\subsection{Requerimientos de calidad del producto de software}
+
+En conjunto con MOSAQ, se analizaron las características y subcaracterísticas que ofrece
+el modelo ISO 25010 con el fin de encontrar las que mejor se adecuen a los requerimientos
+de calidad. El principal requerimiento es mantenibilidad y además se optó por evaluar
+algunos aspectos de la portabilidad del producto. Para estas dos características, se
+escogieron subcaracterísticas del modelo ISO 25010 y ciertas métricas para implementar
+la evaluación.
+
+\subsection{Partes del producto sometidas a evaluación}
+
+Se sometieron a evaluación dos módulos del producto de software. Estos son SAE Framework
+Servidor y SAE Framework Cliente. La evaluación difiere en algunos aspectos para cada módulo
+puesto que tienen diferencias en la arquitectura de la implementación.
+
+\subsection{Rigor de la evaluación}
+
+Se decidió que la mayor cantidad de esfuerzo y rigor debe estar enfocado en estudiar y
+analizar la mantenibilidad del producto. 
+
+Se estudiaron a fondo métricas relacionadas con la mantenibilidad del producto y se
+utilizaron criterios que permiten asegurar prácticas profesionales en la construcción
+del producto de software.
+
+También se realizaron descripciones cualitativas acerca de la portabilidad del producto.
+Esta característica junto con la mantenibilidad, es importante para los clientes de MOSAQ
+ya que ambas influyen en los procesos que se deben llevar a cabo en el caso de que se tuviese
+que trabajar con terceros en un futuro.
 \label{chap:validation}
-% PRIMERA EVALUACION %
+
+\section{Diseño de la evaluación}
+Para llevar a cabo las mediciones, MOSAQ hizo entrega de las fuentes principales de su software, 
+los cuales bajo un acuerdo de confidencialidad, fueron analizados por parte del equipo Toeska.
+
+\subsection{Para SAEFramework Servidor}
+Para este módulo se utilizaron las siguientes herramientas para realizar las mediciones.
+
+\begin{itemize}
+\item NDepend v5.0.0.8085\footnote{http://www.ndepend.com}
+\item Visual Studio 2013 Code Metrics\footnote{http://msdn.microsoft.com/en-us/library/bb385914.aspx}
+\item Visual Studio 2012 Code Clone Analysis\footnote{http://msdn.microsoft.com/en-us/library/hh205279.aspx}
+\end{itemize}
+
+\subsection{Para SAEFramework Cliente}
+
+\begin{itemize}
+\item SonarQube\footnote{http://www.sonarqube.org/}
+\item JsHint v2.1.11\footnote{http://www.jshint.com/}
+\item WebStorm v7 Inspection tools\footnote{http://www.jetbrains.com/webstorm/}
+
+
+La configuración elegida para JsHint es la siguiente:
+\begin{verbatim}
+{
+    "globals": {
+        "console": false,
+        "jQuery": false,
+        "_": false
+    },
+    "maxparams": 5,
+    "maxdepth": 5,
+    "maxstatements": 25,
+    "maxcomplexity": 10,
+    "es5": true,
+    "browser": true,
+    "boss": false,
+    "curly": false,
+    "debug": false,
+    "devel": false,
+    "eqeqeq": true,
+    "evil": true,
+    "forin": false,
+    "immed": true,
+    "laxbreak": false,
+    "newcap": true,
+    "noarg": true,
+    "noempty": false,
+    "nonew": false,
+    "nomen": false,
+    "onevar": true,
+    "plusplus": false,
+    "regexp": false,
+    "undef": true,
+    "sub": true,
+    "strict": false,
+    "white": true,
+    "unused": true
+}
+\end{verbatim}
+
+En esta configuración podemos ver los parámetros \textit{maxparams}, \textit{maxdepth} 
+y \textit{maxcomplexity} los cuales nos permiten definir los límites para el número de parámetros, 
+profundidad y complejidad ciclomática respectivamente. Estos parámetros fueron seleccionados de manera 
+informada de acuerdo a buenas prácticas investigadas previamente y acordes a un software con las 
+características de SAE Framework.
+\end{itemize}
+
+% PLAN DE ACTIVIDADES DE EVALUACION %
+\subsection{Plan de actividades de evaluación}
+
+A través de reuniones con MOSAQ, se acordaron los siguientes puntos dentro del plan de trabajo en lo 
+que respecta a planificación y evaluación de calidad.
+\begin{itemize}
+\item El equipo Toeska realizará las mediciones pertinentes sobre el código fuente y sobre algunas 
+prácticas de desarrollo del equipo de MOSAQ. Con estas mediciones se evaluarán los requerimientos de 
+calidad establecidos en el modelo que se definió.
+
+\item El equipo Toeska entregará los resultados de la primera evaluación, los puntos donde se encontraron 
+brechas que deben ser consideradas, además guías para realizar los ajustes necesarios para que el producto 
+obtenga mejores resultados durante la próxima evaluación.
+
+\item Finalmente se realizará otra evaluación utilizando los mismo criterios utilizados 
+para la primera evaluación, en la cual se espera haber cerrado las brechas encontradas anteriormente 
+y así certificar que el producto cumple con las características escogidas de la norma ISO 25010.
+\end{itemize}
+
 \section{Resultados de la primera evaluación SAEFramework Servidor}
 \subsection{Realización de mediciones de mantenibilidad}
 
@@ -149,7 +279,7 @@ En el cuadro~\ref{table:CC} se pueden observar los 10 métodos con mayor complej
 
 
 \subsubsection{Índice de mantenibilidad} 
-En el cuadro~\ref{table:MI} se muestra el valor del índice de manteniblidad para el código de software.
+En el cuadro~\ref{table:MI} se muestra el valor del índice de mantenibilidad para el código de software.
 \begin{table}[hb]
 \centering
     \begin{tabular}{|l|l|}
@@ -306,7 +436,7 @@ El primer valor analizado es el de Cohesión relacional. El valor para este aná
 encuentra dentro del rango considerado como correcto para una aplicación. Valores
 más altos podrían indicar sobre-acoplamiento ya que la cohesión relacional nos entrega un promedio de relaciones internas por tipo dentro de un
 paquete. Un paquete debe tener sus clases fuertemente relacionadas y estas no deberían estar relacionadas de manera
-considerable con clases fuera de este paquete.
+considerable con clases externas.
 \\
 
 Las siguientes métricas corresponden a LCOM y LCOM HS. Para estas medidas existen rangos definidos que son considerados como correctos para un conjunto de tipos.
@@ -351,7 +481,7 @@ eliminarlos ya que pueden degradar la analizabilidad del software.
 \\
 
 El valor de \textbf{instabilidad} es de 0.23. Este valor puede variar entre 
- y 1, donde 0 indica un paquete completamente estable y 1 un paquete 
+0 y 1, donde 0 indica un paquete completamente estable y 1 un paquete 
 completamente inestable. El valor obtenido en este caso es bastante aceptable 
 e indica que el software se encuentra en un estado estable y tiene una buena 
 modificabilidad. Cabe mencionar que este valor se obtiene analizando las 
@@ -360,16 +490,16 @@ esta relacionado con el nivel de acoplamiento en el sistema.
 \\
 
 Para estudiar la \textbf{complejidad ciclomática} se muestra una tabla con 
-el top 10 de los métodos con la mayor complejidad. Los estándares para los 
-métodos indican que un método con una complejidad ciclomática mayor a 30 puede 
-ser demasiado complejos y se debe estudiar la posibilidad de dividirlo en 
+el top 10 de los métodos con la mayor complejidad. El estándar indica
+que un método con una complejidad ciclomática mayor a 30 puede 
+ser demasiado complejo y se debe estudiar la posibilidad de dividirlo en 
 métodos más pequeños a menos que corresponda a código generado.
-En este caso el análisis arrojó solo un método con un valor superior a 30, 
+En este caso el análisis arrojó sólo un método con un valor superior a 30, 
 el cual es \textbf{Listar()} dentro de \textbf{Mosaq.SaeFramework.v2013.Vistas.ConsultaVistas}.
 Se analizó este método y se puede observar de que contiene un \textit{switch} 
 con un gran número de \textit{cases}. Este \textit{switch} es el que genera 
 un aumento en la complejidad ciclomática. Por lo tanto se recomienda estudiar 
-este método y buscar alguna manera de refactorizarlo y así obtener un código 
+este método y buscar alguna manera de refactorizar para obtener un código 
 más mantenible. Algunas opciones para refactorizar un \textit{switch} 
 se basan en utilizar diccionarios, mapas o simplemente separar las enumeraciones 
 en sus propias clases.
@@ -443,7 +573,7 @@ no son consideradas.
 
 Para ambos módulos se recomienda el uso de alguna herramienta de análisis 
 de código estático. Estas herramientas permiten estudiar algunas de las métricas 
-presentadas en este informe así cómo buenas prácticas correspondientes al 
+presentadas en este informe así como buenas prácticas correspondientes al 
 lenguaje de la aplicación.
 
 Los valores adecuados para cada métrica se pueden encontrar en la 
@@ -470,7 +600,7 @@ SonarQube presenta buenos resultados, los cuales pueden ser útiles para
 perpetuar la mantenibilidad del código. Además, esta herramienta es de código 
 abierto lo cual la ubica como la mejor opción puesto que no se desea hace un 
 análisis demasiado exhaustivo sino más bien encontrar puntos críticos dentro 
-del producto que puedan afecta su mantenibilidad. El uso de Sonarqube también 
+del producto que puedan afectar su mantenibilidad. El uso de Sonarqube también 
 se recomienda para analizar el código del lado cliente.
 
 
@@ -588,7 +718,7 @@ buen estándar para esta sub-característica.
 El análisis arrojó resultados similares a los de la primera evaluación. Algunos archivos aumentaron
 de forma mínima su complejidad. Por ejemplo app.js aumentó de 4.1 a 4.3.
 Los valores en general de los archivos siguen siendo muy buenos.
-Se realizó un barrido buscando cualquier archivo que mostrara una complejidad por función mayor
+Se realizó un barrido buscando cualquier archivo que arrojara una complejidad por función mayor
 a 5 y sólo se encontró el archivo util/sae-message.js con una complejidad de 5.1 lo cual aún es
 un valor aceptable.
 Se puede concluir que el nivel de complejidad del sistema en general se encuentra dentro
@@ -616,7 +746,7 @@ del software SAE en la sección de SAEFramework servidor. Como se mencionó en e
 documentación detallada para llevar a cabo la instalación de la parte 
 servidor como para la parte cliente además de otras consideraciones a tener en cuenta durante ese proceso.
 Se concluye que el producto cuenta con un buen respaldo y se adhiere 
-a estándares acordes con respecto a esta característica. Mas información se puede encontrar en la sección~\ref{ins}
+a estándares acordes con respecto a esta característica. Más información se puede encontrar en la sección~\ref{ins}
 
 \section{Conclusiones finales de la evaluación}
 Durante el proceso de certificación se adaptó un subconjunto de
