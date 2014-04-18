@@ -1,15 +1,30 @@
-% modelo de calidad
-% expandirse en ISO 25010
-
-%-utilización de un modelo de calidad
-    %-ISO 25010
-    %por que se eligio?
-        %-historia
-        %-definiciones
-        %-modelo completo
-        %-mantenibilidad
-        %-otras características que puedan servir para el problema
 \chapter{Propuesta}
+
+La propuesta presentada en este trabajo consiste en la generación de un \textbf{framework}
+para evaluar la continuidad de desarrollo de un producto de software. Este
+framework tiene su base en la serie ISO 25000. De esta serie se han extraído un 
+subconjunto de características y subcaracterísticas
+que permiten construir un modelo que apunta a la evaluación de la continuidad de desarrollo.
+Esta ISO también ha sido utilizada como base para generar un esquema de trabajo y de
+las tareas fundamentales a la hora de llevar a cabo una evaluación sobre un producto real.
+
+La elección de las métricas que dan valor a cada subcaracterística se ha realizado a través
+de un análisis de la litetura y a través del criterio del autor,
+tomando en cuenta el refinamiento y evolución que los distintos enfoques 
+de mantenibilidad han tenido durante los años, así como los requerimientos actuales
+en la industria del software. Junto a estas métricas, se presentan también las condiciones
+bajo las cuales el producto se debe considerar como mantenible o inmantenible de acuerdo
+a los resultados obtenidos luego de la ejecución de la evaluación.
+
+Utilizando esta propuesta se podrá llevar a cabo la construcción, aplicación y análisis
+de resultados de una evaluación de calidad de la continuidad de desarrollo de un producto
+de software real.
+
+A continuación se presentan más detalles acerca de los elementos fundamentales que componen
+el framework de evaluación de continuidad.
+
+
+\section{ISO 25000}
 
 La serie de estándares ISO/IEC 25000 se denomina SQuaRE (Software product
 Quality Requirements and Evaluation) y se compone de la siguientes divisiones~\cite{25000}:
@@ -23,7 +38,7 @@ Quality Requirements and Evaluation) y se compone de la siguientes divisiones~\c
 \end{itemize}
 
 Cada una de estas divisiones entrega estándares y guías para realizar
-el análisis de calidad correspondiente. 
+el proceso de análisis de calidad correspondiente.
 
 En SQuaRE se entregan:
 \begin{itemize}
@@ -31,67 +46,45 @@ En SQuaRE se entregan:
     \item Modelos de referencia
     \item Guía general
     \item Guías individuales para cada división
-    \item Estándares para propósitos como especificación de requerimientos, 
+    \item Estándares para distintos propósitos tales como especificación de requerimientos,
     planeación y gestión, medición y evaluación.
 \end{itemize}
 
 SQuaRE reemplaza a las series ISO/IEC 9126 y 14598.
-Para esta memoria se utilizaron la división de Modelo de Calidad, de la cual
-se obtuvo un conjunto de características enfocadas en la mantenibilidad del 
+
+Para la construcción del framework de evaluación se utilizaron 
+principalmente la división de Modelo de Calidad, de la cual
+se obtuvo un conjunto de características  y subcaracterísticas enfocadas en la mantenibilidad del 
 producto, y la división de Evaluación de Calidad, de la cual se obtuvieron
 guías para aplicar el modelo obtenido y hacer una evaluación de calidad
 sobre un producto de software real.
 
-Se propone la generación de un modelo de calidad basado en el 
-modelo ISO/IEC 25010, el cual estará enfocado en la mantenibilidad del producto 
-de software. Esta característica está directamente relacionada con la 
-continuidad de desarrollo del producto.
-El modelo ISO/IEC 25010 presenta además la mantenibilidad como una de sus principales
-características y además entrega un conjunto de sub-características que sirven para
-guiar la búsqueda de las métricas apropiadas.
-Estas métricas no están contenidas en el modelo y deben ser escogidas por los evaluadores, 
-encontrándose muchas de ellas en la literatura.
-Se presentarán las sub-características escogidas así como las 
-métricas para realizar las mediciones sobre un producto de software real, 
-con el fin de evaluar su mantenibilidad y así, entregar información acerca como afectaría
-su calidad en la continuidad de desarrollo por parte de terceros.
-
-%sobre ISO 25010
 \section{ISO/IEC 25010}
 
 Este estándar define~\cite{25010}:
 
 \begin{enumerate}
-\item Un modelo de \textbf{calidad en uso} compuesto de cinco características
-relacionadas con el resultado de la interacción cuando un producto es utilizado
-en un contexto de uso particular. Este modelo es aplicable al sistema
-humano-computador completo, incluyendo los sistemas computaciones en uso
-y los productos de software en uso.
-
-\item Un modelo de \textbf{calidad de producto} compuesto de 8 características relacionadas
-con las propiedades estáticas de un software y propiedades dinámicas de un sistema
-computacional. El modelo es aplicable a los sistemas computacionales y productos
-de software.
+    \item Un modelo de \textbf{calidad en uso} compuesto de cinco características
+    relacionadas con el resultado de la interacción cuando un producto es utilizado
+    en un contexto de uso particular. Este modelo es aplicable al sistema
+    humano-computador completo, incluyendo los sistemas computacionales en uso
+    y los productos de software en uso.
+    \item Un modelo de \textbf{calidad de producto} compuesto de 8 características relacionadas
+    con las propiedades estáticas de un software y propiedades dinámicas de un sistema
+    computacional. El modelo es aplicable a los sistemas computacionales y productos
+    de software.
+\end{enumerate}
 
 Como en este caso se desea evaluar un producto de software, específicamente
 su mantenibilidad, no se utilizarán características del modelo para calidad
 en uso. Sólo se utilizará un conjunto del modelo para calidad de producto.
-El interés se enfocará en las propiedades estáticas del sistema, las cuales
+El interés está en las propiedades estáticas del sistema, las cuales
 a través de su correctitud y adherencia a estándares y buenas prácticas, nos
-entregarán información acerca de la mantenibilidad del producto.
-
-A través de otros estándares contenidos en la serie ISO/IEC 25000, se generará
-un modelo de calidad y se implementará una evaluación real a través de la cual se 
-pueda certificar la continuidad de desarrollo.
-
-Se trabajará en conjunto con la empresa creadora del producto de software.
-Luego de la primera evaluación, se entregará la retroalimentación necesaria
-para lograr un nivel más alto de calidad en una evaluación final que permitirá
-certificar la mantenibilidad en base al modelo generado.
-\end{enumerate}
+entregarán información acerca de la mantenibilidad del producto y por ende
+de su continuidad de desarrollo.
 
 \subsection{Modelo de Calidad de Producto}
-Este modelo se compone de las siguientes características y sub-características:
+Este modelo se compone de las siguientes características y subcaracterísticas:
 
 \begin{itemize}
 \item Adecuación Funcional
@@ -157,103 +150,28 @@ los requerimientos de calidad.
 
 En la práctica es muy complicado medir todas las subcaracterísticas para un sistema
 o producto de software de gran tamaño. De esta manera, la importancia de las 
-características dependerán de los objetivos y metas del proyecto. El modelo
+características dependerá de los objetivos y metas del proyecto. El modelo
 debe ser adaptado antes de su uso como parte de la descomposición de requerimientos
-para identificar aquellas características y sub-características que son más
+para identificar aquellas características y subcaracterísticas que son más
 importantes.
 
-Este trabajo se enfocará solamente en la continuidad de desarrollo del producto
-de software, por lo que la mayor cantidad de esfuerzo en las mediciones, se
-realizará en la característica Mantenibilidad. Esta característica tiene
-una fuerte influencia en la calidad de uso para las personas que realizarán
-tareas de mantención en el software. Estas tareas no sólo serán de mantenimiento,
-sino también extender el software, arreglar defectos, realizar inspecciones
-de código, etc.
+Como el framework presentado en este trabajo se enfocará solamente en la
+continuidad de desarrollo del producto
+de software, la característica Mantenibilidad será el actor principal pero además
+se consideró que la portabilidad del producto también influye en la continuidad del desarrollo.
 
-En la siguiente sección se presentará la implementación de la propuesta
-utilizando el modelo.
+A continuación se presenta la implementación de la propuesta.
 
 \section{Definición del modelo}
-
-Para evaluar un producto de software utilizando el modelo ISO/IEC 25010, se debe escoger un sub-conjunto
-de características de las principales que lo componen. Estas deben ser escogidas de acuerdo
-al motivo de la evaluación y deben ser acordes al contexto del producto.
-
-Como se mencionó previamente, la continuidad de desarrollo de un producto de software está directamente
-ligada con la mantenibilidad del producto, puesto que la calidad de su código fuente va a incidir
-en el trabajo posterior de los desarrolladores, más aún si estos no tienen conocimiento previo del sistema.
-
-Para realizar esta elección, la ISO/IEC provee guías con una serie de consejos para definir correctamente
-un plan de calidad, partiendo por la elección de características y finalizando con el análisis de la evaluación
-propiamente tal. Estas guías se pueden encontrar en la división ISO/IEC 25040~\cite{25040}, la cual corresponde a la división
-de evaluación de calidad. Esta provee requerimientos, recomendaciones y guías para
-la evaluación de un producto de software ya sean realizadas por evaluadores independientes, adquisidores o
-desarrolladores. También se presenta un apoyo para documentar una medición como un módulo de evaluación.
-
-Los principales hitos dentro de este proceso se pueden resumir en:
-\begin{enumerate}
-    \item Establecer los requerimientos de la evaluación
-    \item Especificar la evaluación
-    \item Diseñar la evaluación
-    \item Ejecutar la evaluación
-    \item Concluir la evaluación
-\end{enumerate}
-
-La ejecución de estas tareas en un producto de software real se describe a continuación.
-
-\section{Requerimientos de la evaluación}
-
-\subsection{Propósito de la evaluación}
-
-Se desea evaluar el producto de software SAE de la empresa MOSAQ con el fin de
-elaborar un plan de calidad que permita cerrar brechas en torno a temas de 
-mantenibilidad de su producto. A través de esta evaluación se acreditará que la 
-empresa utilizó un conjunto de buenas prácticas para construir el software y que 
-éste puede ser mantenido y modificado por terceros en el caso que fuese necesario.
-
-\subsection{Requerimientos de calidad del producto de software}
-
-En conjunto con MOSAQ, se analizaron las características y subcaracterísticas que ofrece
-el modelo ISO 25010 con el fin de encontrar las que mejor se adecuen a los requerimientos
-de calidad. El principal requerimiento es mantenibilidad y además se optó por evaluar
-algunos aspectos de la portabilidad del producto. Para estas dos características, se
-escogieron subcaracterísticas del modelo ISO 25010 y ciertas métricas para implementar
-la evaluación.
-
-\subsection{Partes del producto sometidas a evaluación}
-
-Se sometieron a evaluación dos módulos del producto de software. Estos son SAE Framework
-Servidor y SAE Framework Cliente. La evaluación difiere en algunos aspectos para cada módulo
-puesto que tienen diferencias en la arquitectura de la implementación.
-
-\subsection{Rigor de la evaluación}
-
-Se decidió que la mayor cantidad de esfuerzo y rigor debe estar enfocado en estudiar y
-analizar la mantenibilidad del producto. 
-
-Se estudiaron a fondo métricas relacionadas con la mantenibilidad del producto y se
-utilizaron criterios que permiten asegurar prácticas profesionales en la construcción
-del producto de software.
-
-También se realizaron descripciones cualitativas acerca de la portabilidad del producto.
-Esta característica junto con la manteniblidad, es importante para los clientes de MOSAQ
-ya que ambas influyen en los procesos que se deben llevar a cabo en el caso de que se tuviese
-que trabajar con terceros en un futuro.
-
-\section{Especificación de la evaluación para SAEFramework Servidor}
-%Especificacion para SAE Servidor
-
-A continuación se presentan las métricas definidas para realizar la evaluación. Estas métricas 
-han sido seleccionadas tomando en cuenta las principales recomendaciones que la ISO entrega en 
-la serie 25000, las cuales sirven para implementar un modelo y plan de evaluación de calidad 
-utilizando el modelo presentado en la división 25010.
-
+% PRESENTAR EL MODELO CONSTRUIDO
+% PRESENTAR LAS TAREAS DEL PROCESO DE EVALUACION
 
 \subsection{Selección de métricas para mantenibilidad}
-Las subcaracterísticas elegidas para mantenibilidad son \textbf{modularidad}, \textbf{reusabilidad}, 
+Las subcaracterísticas elegidas para mantenibilidad son \textbf{modularidad}, \textbf{reusabilidad},
 \textbf{modificabilidad} y \textbf{capacidad de pruebas}.
 
-A continuación se presentan las métricas para evaluar estas subcaracterísticas.
+A continuación se presentan las métricas escogidas para evaluar estas subcaracterísticas
+así como el rango o valor de correctitud que debiesen tener.
 
 \subsubsection{Cohesión Relacional (Modularidad)}
 Es el número promedio de relaciones internas por tipo. Se mide utilizando:
@@ -265,8 +183,6 @@ Donde $R$ es el número de relaciones internas entre tipos y el paquete, $N$ el 
 Las clases dentro de un \textit{assembly}\footnote{biblioteca de código compilado} deben estar fuertemente 
 relacionadas, de esta manera la cohesión tendrá tener un valor alto. Por otro lado, valores demasiado altos 
 podrían indicar sobre-acoplamiento. Un buen rango es $1.5\leq H\leq 4.0$.
-
-%FIXME: sugerencia: el debería cambiarlo a debe. definir en nota al pie un assembly (arreglado)
 
 \subsubsection{LCOM (Falta de cohesión en métodos) (Modularidad)}
 El principio de responsabilidad única consiste en que una clase no debe tener más de una razón para cambiar. 
@@ -296,18 +212,18 @@ HS mayor a $1$ debería ser considerado peligroso.
 \begin{equation*}
 LCOM HS = M - \frac{\sum_{f\in F}\left|M_f\right|}{F}\times (M-1)
 \end{equation*}
-Tipos en los cuales $LCOM HS\ge 1.0$ y $\left|F\right|\ge 10$ y $\left|M\right|\ge 10$ deberían ser evitados. 
+Tipos en los cuales $LCOM HS\ge 1.0$ y $\left|F\right|\ge 10$ y $\left|M\right|\ge 10$ deberían ser evitados.
 Esta restricción es más fuerte (por lo tanto más fácil de satisfacer) que la descrita para $LCOM$.
 
 \subsubsection{Acoplamiento eferente (Modularidad)}
 Número de tipos en el paquete correspondiente, que dependen de tipos que están fuera del paquete.
 
-Un valor muy alto de esta métrica podría implicar problemas de diseño. Tipos que tengan este valor muy 
-alto están entrelazados con muchas otras implementaciones. Mientras más alto sea el valor, mayor es el número  
+Un valor muy alto de esta métrica podría implicar problemas de diseño. Tipos que tengan este valor muy
+alto están entrelazados con muchas otras implementaciones. Mientras más alto sea el valor, mayor es el número
 de responsabilidades que el tipo tiene.
 
 \subsubsection{Acoplamiento aferente (Modularidad)}
-Número de tipos fuera del paquete, que dependen de tipos que están en el paquete en evaluación. 
+Número de tipos fuera del paquete, que dependen de tipos que están en el paquete en evaluación.
 
 Un valor alto de esta métrica no es necesariamente peligroso, sin embargo es interesante saber que partes 
 del código son altamente utilizadas.
@@ -328,46 +244,24 @@ I = C_e / (C_e + C_a)
 
 Donde $C_e$ es el acoplamiento eferente y $C_a$ el acoplamiento aferente.
 
-Un valor de $I=0$ indica un paquete completamente estable, fácil de modificar. Un valor de $I=1$ indica 
+Un valor de $I=0$ indica un paquete completamente estable, fácil de modificar. Un valor de $I=1$ indica
 un paquete completamente inestable.
 
 \subsubsection{Complejidad Ciclomática (Modificabilidad)}
 Número de decisiones que pueden ser tomadas en un procedimiento.
-Procedimientos con un valor mayor a 15 son difíciles de entender, mientras que con un valor mayor a 30 
+Procedimientos con un valor mayor a 15 son difíciles de entender, mientras que con un valor mayor a 30
 son extremadamente complejos y deberían ser divididos en métodos más pequeños (a menos que sea código 
 auto-generado).
 
 \subsubsection{índice de mantenibilidad (Modificabilidad)}
 
-Corresponde a un índice entre 0 y 100 que representa la facilitad relativa
-de mantener el código. Un valor más alto indica una mejor mantenibilidad. Un valor entre 20 y 100 
-indica que el código tiene una buena mantenibilidad. Un valor entre 10 y 19 indica que el código es 
+Corresponde a un índice entre 0 y 100 que representa la facilidad relativa
+de mantener el código. Un valor más alto indica una mejor mantenibilidad. Un valor entre 20 y 100
+indica que el código tiene una buena mantenibilidad. Un valor entre 10 y 19 indica que el código es
 moderadamente mantenible y un código entre 0 y 9 indica una baja mantenibilidad.
 
-\subsubsection{Código duplicado (Reusabilidad)}
-
-Se utiliza alguna heurística para detectar código potencialmente duplicado.
-El hecho de encontrar un porcentaje alto de duplicación, podría indicar que no se está haciendo un reuso 
-adecuado en el software.
-
-\subsection{Selección de métricas para portabilidad}
-
-\subsubsection{Prácticas de instalación (Instalabilidad)}
-
-Descripciones cualitativas acerca de cómo se implementa una instalación estándar para el producto. 
-Se estudian estos procesos y se recomiendan mejoras para alinear las prácticas a estándares profesionales.
-%Especificacion para SAE Cliente
-
-\section{Especificación de la evaluación para SAE Framework Cliente}
-\subsection{Selección de métricas para mantenibilidad}
-\subsubsection{Complejidad Ciclomática (Modificabilidad)}
-Número de decisiones que pueden ser tomadas en un procedimiento.
-Procedimientos con un valor mayor a 15 son difíciles de entender, mientras que con un valor mayor a 
-30 son extremadamente complejos y deberían ser divididos en métodos más pequeños (a menos que sea 
-código auto-generado).
-
 \subsubsection{Profundidad (Modificabilidad, Analizabilidad)}
-Estudia el nivel de anidamiento que puede existir entre funciones o expresiones dentro del código. 
+Estudia el nivel de anidamiento que puede existir entre funciones o expresiones dentro del código.
 Se debe definir un límite crítico de profundidad y verificar que no se esté sobrepasando.
 
 \subsubsection{Número de parámetros (Analizabilidad)}
@@ -382,92 +276,54 @@ Se utiliza alguna heurística para detectar código potencialmente duplicado.
 El hecho de encontrar un porcentaje alto de duplicación, podría indicar que no se está haciendo un reuso 
 adecuado en el software.
 
-%----FIN METRICAS PARA SAE CLIENTE---------------------------------------------------------%
-\section{Diseño de la evaluación}
-Para llevar a cabo las mediciones, MOSAQ hizo entrega de las fuentes principales de su software, 
-los cuales bajo un acuerdo de confidencialidad, fueron analizados por parte del equipo Toeska.
+\subsection{Selección de métricas para portabilidad}
 
-\subsection{Para SAEFramework Servidor}
-Para este módulo se utilizaron las siguientes herramientas para realizar las mediciones.
+\subsubsection{Prácticas de instalación (Instalabilidad)}
 
-\begin{itemize}
-\item NDepend v5.0.0.8085\footnote{http://www.ndepend.com}
-\item Visual Studio 2013 Code Metrics\footnote{http://msdn.microsoft.com/en-us/library/bb385914.aspx}
-\item Visual Studio 2012 Code Clone Analysis\footnote{http://msdn.microsoft.com/en-us/library/hh205279.aspx}
-\end{itemize}
+Descripciones cualitativas acerca de cómo se implementa una instalación estándar para el producto. 
+Se estudian estos procesos y se recomiendan mejoras para alinear las prácticas a estándares profesionales.
 
-\subsection{Para SAEFramework Cliente}
+\section{Definición de las tareas dentro del proceso de evaluación}
 
-\begin{itemize}
-\item SonarQube\footnote{http://www.sonarqube.org/}
-\item JsHint v2.1.11\footnote{http://www.jshint.com/}
-\item WebStorm v7 Inspection tools\footnote{http://www.jetbrains.com/webstorm/}
+Las principales tareas y sub-tareas dentro del proceso de evaluación son:
 
+\begin{enumerate}
+    \item Establecer los requerimientos de la evaluación
+        \begin{enumerate}
+                \item Establecer el propósito de la evaluación
+                \item Obtener los requerimientos de calidad del producto de software (si es que existen)
+                \item Identificar las partes del producto que serán sometidas a la evaluación
+                \item Definir el rigor de la evaluación (tomar en cuenta presupuestos, tiempos, propósito, etc)
+        \end{enumerate}
+    \item Diseñar la evaluación
+        \begin{enumerate}
+                \item Generar el plan de actividades de evaluación
+                    Se debe tener en cuenta el presupuesto, métodos de evaluación, herramientas de evaluación, 
+                    calendarización de actividades, recursos disponibles, etc.
+        \end{enumerate}
+    \item Ejecutar la evaluación
+        \begin{enumerate}
+                \item Realizar las mediciones utilizando el modelo entregado
+                \item Aplicar criterios de decisión para las medidas utilizando el modelo entregado
+                \item Aplicar criterios de decisión para la evaluación (tomar en cuenta los requerimientos de calidad
+                    del producto)
+        \end{enumerate}
+    \item Concluir la evaluación
+        \begin{enumerate}
+            \item Revisar los resultados de la evaluación
+            \item Entregar los datos de evaluación
+        \end{enumerate}
+\end{enumerate}
 
-La configuración elegida para JsHint es la siguiente:
-\begin{verbatim}
-{
-    "globals": {
-        "console": false,
-        "jQuery": false,
-        "_": false
-    },
-    "maxparams": 5,
-    "maxdepth": 5,
-    "maxstatements": 25,
-    "maxcomplexity": 10,
-    "es5": true,
-    "browser": true,
-    "boss": false,
-    "curly": false,
-    "debug": false,
-    "devel": false,
-    "eqeqeq": true,
-    "evil": true,
-    "forin": false,
-    "immed": true,
-    "laxbreak": false,
-    "newcap": true,
-    "noarg": true,
-    "noempty": false,
-    "nonew": false,
-    "nomen": false,
-    "onevar": true,
-    "plusplus": false,
-    "regexp": false,
-    "undef": true,
-    "sub": true,
-    "strict": false,
-    "white": true,
-    "unused": true
-}
-\end{verbatim}
-
-En esta configuración podemos ver los parámetros \textit{maxparams}, \textit{maxdepth} 
-y \textit{maxcomplexity} los cuales nos permiten definir los límites para el número de parámetros, 
-profundidad y complejidad ciclomática respectivamente. Estos parámetros fueron seleccionados de manera 
-informada de acuerdo a buenas prácticas investigadas previamente y acordes a un software con las 
-características de SAE Framework.
-\end{itemize}
-
-% PLAN DE ACTIVIDADES DE EVALUACION %
-\subsection{Plan de actividades de evaluación}
-
-A través de reuniones con MOSAQ, se acordaron los siguientes puntos dentro del plan de trabajo en lo 
-que respecta a planificación y evaluación de calidad.
-\begin{itemize}
-\item El equipo Toeska realizará las mediciones pertinentes sobre el código fuente y sobre algunas 
-prácticas de desarrollo del equipo de MOSAQ. Con estas mediciones se evaluarán los requerimientos de 
-calidad establecidos en el modelo que se definió.
-
-\item El equipo Toeska entregará los resultados de la primera evaluación, los puntos donde se encontraron 
-brechas que deben ser consideradas, además guías para realizar los ajustes necesarios para que el producto 
-obtenga mejores resultados durante la próxima evaluación.
-
-\item Finalmente se realizará otra evaluación utilizando los mismo criterios utilizados 
-para la primera evaluación, en la cual se espera haber cerrado las brechas encontradas anteriormente 
-y así certificar que el producto cumple con las características escogidas de la norma ISO 25010.
-\end{itemize}
-
-En el capítulo~\ref{chap:validation} se presentan los resultados obtenidos al aplicar el modelo
-generado en el producto de software.
+Estas actividades fueron seleccionadas utilizando las recomendaciones entregadas en la ISO 2504n~\cite{25040}.
+Con estas tareas, y junto al modelo definido, se tiene un framework con el cual podemos llevar a cabo
+una evaluación de calidad específicamente para evaluar la continuidad de desarrollo de un producto de software
+usando como puente las métricas que definen su mantenibilidad.
+Las tareas del proceso sirven para hacer un análisis previo del contexto del producto así como para prepara un informe acorde a
+estándares internacionales. Además se pueden privilegiar ciertas métricas del modelo o incluso omitir algunas. 
+Por ejemplo, dependiendo del tipo de arquitectura en cuestión, algunas métricas podrían no ser útiles. Un caso especial es cuando se analiza un arquitectura de lado ciente, por
+ejemplo código javascript. En este tipo de sistemas, métricas que son más efectivas en sistemas orientado a objetos de lado servidor podrían carecer
+de sentido (acoplamiento entre clases, cohesión relativa, etc). En este tipo de sistemas son más útiles métricas como profundidad,
+número de parámetros o complejidad ciclomática.
+Todos estos ajustes quedan a criterio del evaluador, el cual junto a los clientes debe analizar cada una de las tareas del procesos y así
+refinar aún más el modelo de calidad.
