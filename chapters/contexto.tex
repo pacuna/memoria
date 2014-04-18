@@ -4,16 +4,19 @@
 
 %sobre calidad
 \section{Calidad de Software}
-Calidad de Software es un tema de gran importancia en los procesos de desarrollo.
-Hoy en día sabemos que un producto de software que no cuenta con los estándares de
-calidad adecuados, no goza de propiedades como mantenibilidad, seguridad, usabilidad, etc.
-Si bien la calidad en general es un concepto subjetivo, se han desarrollado un gran
-número de intentos por definir una base común sobre la cual se pueda evaluar un producto 
-de software o que sirva para definir un proceso de desarrollo apropiado con el fin de terminar
-con un producto confiable. Estos intentos generalmente apuntan a definir un modelo
-de calidad que agrupe las principales características que un producto debe tener.
+Un tema de gran importancia en los procesos de desarrollo de software es la calidad.
+Sabemos que un producto de software que no cuenta con los estándares de
+calidad adecuados, tampoco contará de propiedades tales como mantenibilidad, seguridad, 
+usabilidad, etc.
 
-La ISO, IEC y IEEE definen calidad a través de 6 distintas alternativas~\cite{5276043}:
+Si bien la calidad es un concepto subjetivo, se han desarrollado un gran
+número de intentos para definir una base común sobre la cual se pueda evaluar un producto 
+de software o que sirva para definir un proceso de desarrollo apropiado con el fin de construir
+un producto confiable. Estos intentos generalmente apuntan a definir un modelo
+de calidad que sea capáz de agrupar las principales características que un producto debe poseer.
+
+Las organizaciones ISO\footnote{http://www.iso.org}, IEC\footnote{http://www.iec.ch} y IEEE\footnote{http://www.ieee.org} 
+definen calidad a través de 6 distintas alternativas~\cite{5276043}:
 \begin{enumerate}
     \item El grado en el cual un sistema, componente o proceso cumple con los requerimientos especificados.
     \item La capacidad de un producto, servicio, sistema o proceso para cumplir con las necesidades, expectativas
@@ -23,15 +26,15 @@ La ISO, IEC y IEEE definen calidad a través de 6 distintas alternativas~\cite{5
     \item Conformidad en las expectativas del usuario, conformidad en los requerimientos del usuario, satisfacción del cliente,
     confiabilidad y el nivel presente de defectos.
     \item El grado en el cual un conjunto inherente de características cumple con los requerimientos.
-    \item El grado en el cual un sistema, componente o proceso cumple con las necesidades o expectativas de un ciente o usuario.
+    \item El grado en el cual un sistema, componente o proceso cumple con las necesidades o expectativas de un cliente o usuario.
 \end{enumerate}
 
-Como se puede observar en las definiciones, calidad no tiene una definición universal e incluso se podría argumentar
-que es un tema de carácter filosófico~\footnote{\url{http://en.wikipedia.org/wiki/Quality_(philosophy)}}.
+Como se puede observar en las definiciones, calidad no tiene una definición universal e incluso se considera
+un concepto de carácter filosófico~\footnote{\url{http://en.wikipedia.org/wiki/Quality_(philosophy)}}.
 
-Un modelo clásico de calidad de producto, que puede ser aplicado en productos
+Un modelo clásico de calidad de producto, que puede ser aplicado en la industria
 de software es el de Garvin~\cite{Garvin:1984}. Garvin presenta los siguientes
-enfoques que se pueden utilizar dentro de calidad:
+enfoques que se pueden utilizar para evaluar calidad:
 \begin{itemize}
     \item Enfoque trascendente
     \item Enfoque basado en el producto
@@ -40,62 +43,60 @@ enfoques que se pueden utilizar dentro de calidad:
     \item Enfoque basado en valor
 \end{itemize}
 
-El enfoque trascendente es el más difuso. Se refiere a la propiedad inherente
-e indefinible de un producto, con la cual cumple con una alta calidad. Podría
-decirse que es casi una característica intuitiva con la cual se sabe si un
-producto es de calidad.
+El \textbf{enfoque trascendente} es el más difuso. Se refiere a la propiedad inherente
+e indefinible de un producto. Podría decirse que es casi una característica 
+intuitiva con la cual se sabe si un producto es o no de calidad.
 
-El enfoque basado en producto describe diferencias en la cantidad de algunos
+El \textbf{enfoque basado en producto} describe diferencias en la medida de algunos
 atributos deseados en el producto. Por lo tanto a diferencia del enfoque
 trascendente, este puede ser medido. Asumimos que se conoce y se puede 
 describir lo que se desea medir.
 Este enfoque es complicado en productos de software puesto que algunas métricas
-pueden o no existir o ser muy difíciles de medir. Un ejemplo es la mantenibilidad.
+pueden o no existir o ser muy difíciles de cuantificar. Un ejemplo es la mantenibilidad.
 Si se asocia mantenibilidad al esfuerzo requerido para completar un cambio, este
 esfuerzo es difícil de medir a través de diversos desarrolladores ya que no están
 constantemente midiendo el tiempo en sus respectivas tareas. Además depende de 
 otros factores como la complejidad del cambio.
 
-En el enfoque basado en usuario, se asume que el producto que satisface
-las necesidades del usuario de mejor manera, es el que tiene la mayor calidad. El énfasis
+En el \textbf{enfoque basado en usuario}, se asume que el producto que satisface
+las necesidades del usuario de manera más integra, es el que tiene la mayor calidad. El énfasis
 no está en los requerimientos, sino en la impresión subjetiva de los usuarios.
 
-Una visión más interna se observa en el enfoque de fabricación. En este enfoque
+Una visión más interna se observa en el \textbf{enfoque de fabricación}. En este enfoque
 calidad se define como la conformidad con respecto a los requerimientos especificados.
 Se debe asumir que siempre será posible definir un requerimiento así como la desviación
-del producto real con respecto a este requerimiento. En este enfoque las métricas
-concretas, por ejemplo defectos por linea de código son más útiles mientras puedan
+del producto real con respecto a este. En este enfoque las métricas
+concretas, por ejemplo defectos por línea de código son mayormente útiles mientras puedan
 relacionarse con algún requerimiento especificado.
 
-Finalmente en el enfoque basado en valor se asignan costos a la conformidad y no
-con respecto a requerimientos. Se comparan con los beneficios del
-producto y con estos datos se calcula su valor.
+Finalmente en el \textbf{enfoque basado en valor} se asignan costos con respecto a la conformidad y no
+a los requerimientos. Estos costos se comparan con los beneficios del
+producto y con estos datos se calcula el valor.
 
-Garvin sugiere que estos distintos enfoques puede ser útiles durante distintas
+Garvin sugiere que estos distintos enfoques pueden ser útiles durante distintas
 etapas del ciclo de vida del producto. Por ejemplo, al inicio del ciclo de 
-vida, durante la incepción del producto, debemos enfocarnos más en el usuario
-y en el valor, con el fin de entender que es lo que tiene más valor para
+vida, durante la incepción del producto, el enfoque debe estar en el usuario
+y en el valor, con el fin de entender qué es lo que tiene más valor para
 los clientes y usuarios. O por ejemplo, cuando se está construyendo el producto,
-debemos concentrarnos más en la fabricación, con el fin de asegurar que se está
+el enfoque debería estar en la fabricación, con el fin de asegurar que se está
 construyendo un producto adecuado con respecto a la especificación.
 
 \subsection{Calidad de procesos}
-Otra parte importante de calidad que es altamente estudiada es la calidad de 
-procesos. La principal idea detrás de este enfoque, es que mientras de más
+Otro elemento importante es la calidad de procesos. La principal idea detrás de este enfoque, es que mientras de más
 calidad sean los procesos, de más calidad serán los productos.
 
 Un estándar utilizado frecuentemente en la calidad de procesos es la ISO 9000. 
-La idea consiste en establecer un sistema de gestión de calidad en una compañía de
-manera que la calidad resultante del producto también sea alta. No tiene que ver
+La idea detrás de este estándar consiste en establecer un sistema de gestión de calidad de
+manera que la calidad del producto resultante sea alta. No tiene que ver
 directamente con la calidad del producto, sino con los requerimientos de calidad
-de la compañía que produce el producto. 
+de la compañía que produce el producto.
 La introducción de este tipo de estándares dentro de una compañía de software
 puede ser beneficiosa al hacer que los procesos de aseguramiento de calidad sean
 más explícitos y claros~\cite{Wagner:2013}.
 
 Otras iniciativas similares, que se enfocan específicamente en mejorar los
-procesos de desarrollo de software son CMMI y SPICE.
-Estos estándares se basan en la premisa de que existe un proceso ideal, 
+procesos de desarrollo de software son CMMI\foot{http://www.sei.cmu.edu/cmmi} y SPICE (ISO/IEC 15504).
+Estos estándares se basan en la premisa de que existe un proceso ideal,
 el cual es descrito en los estándares y que cada compañía debe alcanzar.
 Existen niveles de madurez y de capacidad partiendo desde procesos caóticos,
 hasta procesos altamente estandarizados y optimizados.
@@ -103,7 +104,7 @@ hasta procesos altamente estandarizados y optimizados.
 La utilización de este enfoque para evaluar continuidad de desarrollo sufre
 de ciertas carencias. Para empezar se parte con la premisa de que mientras
 mejores sean los procesos, mejor será la calidad del producto. Esto quizás
-es claro en fabricación de productos, pero no tan claro en desarrollo de
+es claro en fabricación de productos típicos, pero no así en desarrollo de
 software. Por ejemplo en~\cite{Jones:2000:SAB:335582} se presenta una 
 investigación que buscaba la relación entre el nivel CMM (predecesor de CMMI) 
 de una compañía, y el número de defectos por punto de función entregado en sus productos.
@@ -111,7 +112,7 @@ Como resultado se encontró que mientras el nivel aumentaba, los errores disminu
 lo cual confirmaría la premisa. Sin embargo en los extremos, las mejores
 compañías que estaban en nivel CMM 1 (el peor), producían software con menos
 defectos que las peores compañías con CMM 5 (el mejor). Por lo tanto
-existen otros factores que estaban influyendo en la tasa de defectos.
+habían otros factores que estaban influyendo en la tasa de defectos.
 
 Es importante analizar la calidad de procesos para lograr entregar un producto
 de software de alta calidad, sin embargo como muchos otros factores influyen
@@ -122,18 +123,16 @@ permita evaluar también la continuidad de desarrollo.
 \section{Mantenibilidad}
 
 %sobre mantenibilidad
-La mantenibilidad también es un tema recurrente en ingeniería de software.
+La mantenibilidad es un tema recurrente en la ingeniería de software.
 Al igual que calidad, se compone de elementos subjetivos y que están sujetos
 al contexto del problema. Para medir la mantenibilidad de un producto de
 software, se suelen utilizar métricas cuantitativas y cualitativas.
-Esto puede implicar diversos hechos, por ejemplo, que tan fácil es modificar
-el código fuente del software, que tan seguro es la modificación del código
-fuente sin dañar el funcionamiento correcto del sistema, que tan fácil es entender el código
+Esto puede implicar diversos hechos, por ejemplo, qué tan fácil es modificar
+el código fuente del software, qué tan seguro es la modificación del código
+fuente sin dañar el funcionamiento correcto del sistema, qué tan fácil es entender el código
 fuente del software con el fin de modificarlo o extenderlo, etc.
 Esta característica de calidad afecta generalmente a los desarrolladores,
-puesto que el usuario final no es afectado directamente por la buena calidad
+puesto que el usuario final no es perjudicado directamente por la calidad
 del código fuente, mientras el software cumpla con los requerimientos de usuario.
-Sin embargo es frecuente escuchar sobre proyectos que han debido ser paralizados
-producto de falta de calidad en su código, lo cual no permite seguir
-manteniéndolo.
-
+Sin embargo son frecuentes los proyectos que han debido ser paralizados
+debido a la baja calidad en su código, lo cual no permite continuar su desarrollo y mantención.
