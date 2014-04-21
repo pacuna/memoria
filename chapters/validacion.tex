@@ -1,4 +1,3 @@
-%como se armó el modelo
 \chapter{Validación}
 \label{chap:validacion}
 En esta sección se presenta la aplicación del framework para evaluar mantenibilidad
@@ -18,12 +17,9 @@ empresa utilizó un conjunto de buenas prácticas para construir el software y q
 
 \subsection{Requerimientos de calidad del producto de software}
 
-En conjunto con MOSAQ, se analizaron las características y subcaracterísticas que ofrece
-el modelo ISO 25010 con el fin de encontrar las que mejor se adecuen a los requerimientos
-de calidad. El principal requerimiento es mantenibilidad y además se optó por evaluar
-algunos aspectos de la portabilidad del producto. Para estas dos características, se
-escogieron subcaracterísticas del modelo ISO 25010 y ciertas métricas para implementar
-la evaluación.
+El principal requerimiento del producto es la mantenibilidad. Se desea evaluar
+la continuidad de desarrollo del producto para certificar su correctitud
+en caso de que terceros deban tomar el desarrollo.
 
 \subsection{Partes del producto sometidas a evaluación}
 
@@ -121,7 +117,7 @@ que respecta a planificación y evaluación de calidad.
 \begin{itemize}
 \item El equipo Toeska realizará las mediciones pertinentes sobre el código fuente y sobre algunas 
 prácticas de desarrollo del equipo de MOSAQ. Con estas mediciones se evaluarán los requerimientos de 
-calidad establecidos en el modelo que se definió.
+calidad establecidos en el modelo utilizado para evaluar.
 
 \item El equipo Toeska entregará los resultados de la primera evaluación, los puntos donde se encontraron 
 brechas que deben ser consideradas, además guías para realizar los ajustes necesarios para que el producto 
@@ -129,7 +125,7 @@ obtenga mejores resultados durante la próxima evaluación.
 
 \item Finalmente se realizará otra evaluación utilizando los mismo criterios utilizados 
 para la primera evaluación, en la cual se espera haber cerrado las brechas encontradas anteriormente 
-y así certificar que el producto cumple con las características escogidas de la norma ISO 25010.
+y así certificar que el producto cumple con las características escogidas del modelo.
 \end{itemize}
 
 \section{Resultados de la primera evaluación SAEFramework Servidor}
@@ -495,7 +491,7 @@ que un método con una complejidad ciclomática mayor a 30 puede
 ser demasiado complejo y se debe estudiar la posibilidad de dividirlo en 
 métodos más pequeños a menos que corresponda a código generado.
 En este caso el análisis arrojó sólo un método con un valor superior a 30, 
-el cual es \textbf{Listar()} dentro de \textbf{Mosaq.SaeFramework.v2013.Vistas.ConsultaVistas}.
+el cual es \textbf{Listar()} dentro de \textbf{Vistas.ConsultaVistas}.
 Se analizó este método y se puede observar de que contiene un \textit{switch} 
 con un gran número de \textit{cases}. Este \textit{switch} es el que genera 
 un aumento en la complejidad ciclomática. Por lo tanto se recomienda estudiar 
@@ -503,24 +499,18 @@ este método y buscar alguna manera de refactorizar para obtener un código
 más mantenible. Algunas opciones para refactorizar un \textit{switch} 
 se basan en utilizar diccionarios, mapas o simplemente separar las enumeraciones 
 en sus propias clases.
-\\
 
 El valor obtenido para el \textbf{índice de mantenibilidad} es de 93. Este 
 valor puede estar entre 0 y 100 y mientras más alto indica una mejor 
 mantenibilidad. En este caso el valor sugiere que el software es altamente 
 mantenible bajo los estándares de esta métrica.
-\\
 
 Finalmente, el análisis de código duplicado entrega una tabla en la cual se 
 pueden observar archivos que contienen posibles fuentes de código duplicado. 
 Si bien este análisis muestra que el código duplicado es mínimo, se recomienda 
 estudiar estos archivos y ver si se puede refactorizar código para así disminuir 
 aún más la cantidad de duplicación.
-
-
-
 %-----------------------------CONCLUSIONES CLIENTE-----------------------------------------------------%
-
 
 \section{Conclusiones SAEFramework Cliente}
 
@@ -533,7 +523,6 @@ Para realizar el análisis se debe tener en cuenta que la arquitectura para
 esta parte del framework difiere profundamente con la arquitectura servidor. 
 Esto es debido al uso de herramientas nuevas que utilizan javascript a través 
 de patrones de diseño que clásicamente no se aplicaban en ingeniería de \textit{front-end}.
-\\
 
 Para el estudio de complejidad ciclomática se debe estudiar la complejidad por 
 método y no por archivo, puesto que en esta arquitectura un archivo no 
@@ -543,7 +532,6 @@ ciclomática de un archivo puede resultar alta, sin embargo por método es baja.
 Luego de estudiar los archivos y directorio elegidos, no se encontraron métodos 
 con complejidad alta por lo cual esta parte del código tiene buena mantenibilidad 
 con respecto a sus complejidad.
-\\
 
 Al encontrar funciones con un valor de profundidad muy alto, se generan 
 problemas de analizabilidad y por ende de mantenibilidad. Para este caso, 
@@ -552,7 +540,6 @@ anidaciones para no ser demasiado restrictivo, ni demasiado permisivo.
 Al realizar el análisis no se encontró ningún elemento que sobrepase este 
 umbral, por lo cual esta característica no está afectando la analizabilidad del 
 sistema.
-\\
 
 EL número de parámetros que un método recibe también es una métrica que se debe 
 tener en cuenta para estudiar la analizabilidad de un sistema. Mientras más 
@@ -562,7 +549,6 @@ anterior, se escogió un número de 5 parámetros como mínimo para considerar a
 una función como crítica. Luego de realizar el análisis, no se encontraron 
 funciones que sobrepasen este umbral, por lo cual esta es otra característica 
 bien implementada en el sistema y que mejora su mantenibilidad.
-\\
 
 Finalmente como se mencionó en la sección anterior, el software que se utilizó 
 para realizar las mediciones de duplicación, sólo entregó duplicaciones de 
@@ -691,9 +677,8 @@ Con esta información podemos concluir que esta característica se cumple correc
 
 \subsection{Portabilidad (Instalabilidad)}
 \label{ins}
-Para esta etapa de la evaluación se decidió evaluar la Instalabilidad del software, la cual pertenece
-a la característica Portabilidad del modelo ISO/IEC 25010. Esta característica toma fuerte relevancia
-en el caso de que terceros deban mantener el software a futuro.
+Para esta etapa de la evaluación se evaluó también la Instalabilidad del software.
+Esta característica toma fuerte relevancia en el caso de que terceros deban mantener el software a futuro.
 
 Para realizar un análisis de esta característica se estudió un documento provisto por MOSAQ, el cual
 muestra la información relevante con los procesos involucrados en la instalación del software.
@@ -749,19 +734,39 @@ Se concluye que el producto cuenta con un buen respaldo y se adhiere
 a estándares acordes con respecto a esta característica. Más información se puede encontrar en la sección~\ref{ins}
 
 \section{Conclusiones finales de la evaluación}
-Durante el proceso de certificación se adaptó un subconjunto de
-elementos del modelo ISO/IEC 25010 con el fin de evaluar continuidad de 
-desarrollo del producto SAE para la empresa MOSAQ.
-Esta continuidad se encuentra fuertemente ligada a conceptos tales como 
-mantenibilidad, calidad de documentación y calidad en la gestión de configuración.
+Durante el proceso de certificación se utilizó un modelo de mantenibilidad 
+con el fin de evaluar continuidad de desarrollo del producto SAE para la empresa MOSAQ.
 
-El modelo generado se utilizó para realizar dos evaluaciones y elaborar un plan de acción para mejorar el nivel de calidad del producto objetivo.
+El modelo se utilizó para realizar dos evaluaciones y elaborar un plan de acción para mejorar el nivel de calidad del producto objetivo.
 
 Los resultados de la evaluación final muestran que el estado de calidad del 
 software alcanza un alto nivel y cumple con los estándares necesarios para 
-certificar el producto de acuerdo al modelo. Esta certificación incluye 
-características pertenecientes al modelo ISO/IEC 25010 así como el plan de 
+certificar el producto de acuerdo al modelo. Esta certificación evalúa
+además de las características del modelo, el plan de 
 acción para mejorar la capacidad de pruebas, el control de versiones y la documentación.
 
 \section{Retroalimentación}
 
+Para obtener retroalimentación de la empresa que solicitó la evaluación, se elaboró una
+pequeña encuesta y se entregó al arquitecto de software y a su equipo de desarrollo.
+A continuación se presentan los resultados.
+
+El arquitecto de software entregó las siguientes respuestas:
+\begin{enumerate}
+    \item ¿Cree que este tipo de evaluaciones entrega resultados fiables acerca de la mantenibilidad de un producto de software? ¿Por qué?
+
+En la medida que el proceso de evaluación considere parámetros reales de evaluación y 
+se haga un estudio minucioso, los resultados tenderán a ser fiables, 
+esto utiliza técnicas y procedimientos probados en la industria que han demostrado confiabilidad.
+
+\item ¿Cree que los resultados de esta evaluación de calidad reflejan las características reales de su producto de software?
+
+Claro, la prueba de esto es la curva de aprendizaje de nuevos desarrolladores, 
+los que hasta ahora han podido adoptar el producto de manera muy fácil.
+
+\item ¿De que forma cree que los resultados pueden ayudar a perfeccionar el desarrollo dentro de su empresa?
+
+Los nuevos productos de software que estamos realizando están empleando (o emplearán)
+esta misma estrategia de desarrollo ya que ha demostrado muchos beneficios 
+respecto de los desarrollos tradicionales realizados en el pasado.
+\end{enumerate}

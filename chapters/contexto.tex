@@ -6,14 +6,14 @@
 \section{Calidad de Software}
 Un tema de gran importancia en los procesos de desarrollo de software es la calidad.
 Sabemos que un producto de software que no cuenta con los estándares de
-calidad adecuados, tampoco contará de propiedades tales como mantenibilidad, seguridad, 
+calidad adecuados, no gozará de propiedades tales como mantenibilidad, seguridad, 
 usabilidad, etc.
 
 Si bien la calidad es un concepto subjetivo, se han desarrollado un gran
 número de intentos para definir una base común sobre la cual se pueda evaluar un producto 
 de software o que sirva para definir un proceso de desarrollo apropiado con el fin de construir
 un producto confiable. Estos intentos generalmente apuntan a definir un modelo
-de calidad que sea capáz de agrupar las principales características que un producto debe poseer.
+de calidad que sea capaz de agrupar las principales características que un producto debe poseer.
 
 Las organizaciones ISO\footnote{http://www.iso.org}, IEC\footnote{http://www.iec.ch} y IEEE\footnote{http://www.ieee.org} 
 definen calidad a través de 6 distintas alternativas~\cite{5276043}:
@@ -128,13 +128,20 @@ está mayormente ligada a la continuidad de desarrollo de un producto.
 Al igual que calidad, se compone de elementos subjetivos y que están sujetos
 al contexto del problema. Para medir la mantenibilidad de un producto de
 software, se suelen utilizar métricas cuantitativas y cualitativas.
-Esto puede implicar diversos hechos, por ejemplo, qué tan fácil es modificar
-el código fuente del software, qué tan seguro es la modificación del código
-fuente sin dañar el funcionamiento correcto del sistema, qué tan fácil es entender el código
-fuente del software con el fin de modificarlo o extenderlo, etc.
-Esta característica de calidad afecta generalmente a los desarrolladores,
-puesto que el usuario final no es perjudicado directamente por la calidad
+Esta característica suele responder a cómo el software es capaz de lidiar
+con los siguientes problemas:
+\begin{enumerate}
+	\item qué tan fácil es la modificación del producto por parte de terceros
+	\item qué tan fácil es analizar el producto de software
+	\item qué tan fácil es extender el producto de software una vez terminado el desarrollo principal
+	\item qué tan completa es la capacidad de pruebas del producto
+	\item qué tan modular es el producto de software
+	\item qué tanto reuso de código ocurre dentro del producto
+    \item qué tanto código es posible reutilizar para extender el producto
+\end{enumerate}
 
-del código fuente, mientras el software cumpla con los requerimientos de usuario.
-Sin embargo son frecuentes los proyectos que han debido ser paralizados
+La mantenibilidad afecta generalmente a los desarrolladores,
+puesto que el usuario final no es perjudicado directamente por la calidad
+del código fuente mientras el software cumpla con los requerimientos de usuario.
+Es frecuente escuchar sobre proyectos que han debido ser paralizados
 debido a la baja calidad en su código, lo cual no permite continuar su desarrollo y mantención.
