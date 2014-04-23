@@ -84,65 +84,24 @@ entregarán información acerca de la mantenibilidad del producto y por ende
 de su continuidad de desarrollo.
 
 \subsection{Modelo de Calidad de Producto}
-Este modelo se compone de las siguientes características y subcaracterísticas:
-
-\begin{itemize}
-\item Adecuación Funcional
-    \begin{itemize}
-        \item Completitud funcional
-        \item Correctitud funcional
-        \item Adecuidad funcional
-    \end{itemize}
-\item Eficiencia de desempeño
-    \begin{itemize}
-        \item Comportamiento en el tiempo
-        \item Utilización de recursos
-        \item Capacidad
-    \end{itemize}
-\item Compatibilidad
-    \begin{itemize}
-        \item Co-existencia
-        \item Interoperabilidad
-    \end{itemize}
-\item Usabilidad
-    \begin{itemize}
-        \item Reconocimiento de su adecuación
-        \item Capacidad de ser aprendido
-        \item Protección de error para el usuario
-        \item Estética de interfaz de usuario
-        \item Accesibilidad
-    \end{itemize}
-\item Confiabilidad
-    \begin{itemize}
-        \item Madurez
-        \item Disponibilidad
-        \item Tolerancia a fallos
-        \item Capacidad de recuperación
-    \end{itemize}
-\item Seguridad
-    \begin{itemize}
-        \item Confidencialidad
-        \item Integridad
-        \item No-repudio
-        \item Responsabilidad
-        \item Autenticidad
-    \end{itemize}
-\item Mantenibilidad
-    \begin{itemize}
-        \item Modularidad
-        \item Reusabilidad
-        \item Analizabilidad
-        \item Modificabilidad
-        \item Capacidad de pruebas
-    \end{itemize}
-\item Portabilidad
-    \begin{itemize}
-        \item Adaptabilidad
-        \item Instalabilidad
-        \item Capacidad de ser reemplazado
-    \end{itemize}
-\end{itemize}
-
+Este modelo con sus características y subcaracterísticas se puede observar
+en el cuadro ~\ref{modeloiso25010}.
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[h]
+  \tiny
+\begin{tabular}{@{}llllllll@{}}
+\toprule
+\shortstack{Adecuación \\ funcional} & \shortstack{Eficiencia \\ de desempeño}     & \shortstack{Compatibilidad} & \shortstack{Usabilidad} & \shortstack{Confiabilidad} & \shortstack{Seguridad} & \shortstack{Mantenibilidad} & \shortstack{Portabilidad}\\ \midrule
+\shortstack{Completitud \\ funcional} & \shortstack{Comportamiento \\ en el tiempo} & \shortstack{Co-existencia} & \shortstack{Reconocimiento \\ de su adecuación} & \shortstack{Madurez} & \shortstack{Confidencialidad} & \shortstack{Modularidad} & \shortstack{Adaptabilidad}   \\
+\shortstack{Correctitud \\ funcional} & \shortstack{Utilización \\ de recursos} & Interoperabilidad & \shortstack{Capacidad de \\ ser aprendido} & \shortstack{Disponibilidad} & \shortstack{Integridad} & \shortstack{Reusabilidad} & \shortstack{Instalabilidad} \\
+\shortstack{Adecuidad \\ funcional} &                             &                   & \shortstack{Protección de \\ error para \\ el usuario} & \shortstack{Tolerancia \\ a fallos} & \shortstack{No-repudio} & \shortstack{Analizabilidad} & \shortstack{Capacidad de \\ ser reemplazado} \\
+                                    &                             &                   & \shortstack{Estética de \\ interfaz de usuario} & \shortstack{Capacidad \\ de recuperación} & \shortstack{Responsabilidad} & \shortstack{Modificabilidad} &                              \\
+                                    &                             &                   & \shortstack{Accesibilidad} &                           & \shortstack{Autenticidad} & \shortstack{Capacidad \\ de pruebas} &                              \\ \bottomrule
+\end{tabular}
+\caption{Modelo de calidad ISO 25010}
+\label{modeloiso25010}
+\end{table}
 Este modelo es útil para especificar requerimientos, establecer mediciones y 
 realizar evaluaciones de calidad. Las características definidas pueden ser utilizadas
 como una lista de verificación para asegurar un tratamiento exhaustivo de
