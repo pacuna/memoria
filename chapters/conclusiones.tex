@@ -1,2 +1,41 @@
 \chapter{Conclusiones}
 \label{chap:conclusiones}
+
+En este trabajo se ha presentado un modelo de calidad enfocado en la continuidad
+de desarrollo del producto. Se ha argumentado por que la principal característica
+que influye en esta continuidad de desarrollo es la mantenibilidad.
+Para generar un modelo enfocado esta característica, se ha tomado un conjunto
+de subcaracterísticas del estándar ISO 25010, el cual entrega un modelo para
+evaluar productos de software. El modelo generado ha sido
+refinado para realizar evaluaciones de mantenibilidad. Se han
+definido distintas métricas para cada subcaracterística y además se entregan
+descripciones de las tareas requeridas para llevar a cabo el proceso de evaluación
+sobre un software real de manera efectiva.
+
+Se ha demostrado el uso de este modelo sobre un producto real. A través de esta
+evaluación se puede ejemplificar el uso de las guías para el proceso de evaluación
+así como el uso de las métricas para evaluar el código fuente del software.
+Este ejemplo sirve además para indicar la importancia que tiene el definir correctamente
+el propósito y los requerimientos de la evaluación, puesto que aplicar
+ciegamente un modelo sobre un producto no es ideal. Cada evaluación tendrá
+aspectos relevantes e irrelevantes, por lo que el modelo, que fué acotado
+para evaluar mantenibilidad, debe ser aún mayormente acotado para ajustarse
+al contexto del producto. En la aplicación presentada en este trabajo, se pueden
+notar las diferencias al evaluar la parte cliente con la parte servidor del producto.
+Este tipo de diferencias forzará al evaluador a replantearse cada una de las métricas
+propuestas para ver cuales tienen sentido en cada módulo que se desée evaluar.
+
+Finalmente, cabe mencionar que realizar una evaluación de calidad, no es algo trivial.
+Se requiere más que un modelo y un conjunto de métricas. El evaluador debe ser
+capaz de entender el producto de sofware, conocer los requerimientos de usuario,
+conocer las tecnologías empleadas, conocer las buenas prácticas para este tipo
+de tecnologías y además estar al tanto de las tendencias actuales con respecto
+a la mantenibilidad del software. Por ejemplo, para la subcaracterística
+que evalúa la capacidad de pruebas de un producto, tenemos diversos tipos
+de pruebas que se pueden aplicar. Existen las pruebas unitarias, de integración,
+funcionales, de aceptación, regresión, etc. Además existen diversos esquemas
+que el equipo de desarrollo puede utilizar para guiar la construcción de sus pruebas.
+Con todos estos elementos, el evaluador debe ser capaz de elegir la aplicación
+que mejor se adapte al contexto según su criterio, más aún si se creará un plan
+de calidad para eliminar brechas, como se realizó en la aplicación de este trabajo.
+
