@@ -4,7 +4,14 @@
     <title>Title</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
-      /* Slideshow styles */
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
     </style>
   </head>
   <body>
@@ -12,25 +19,175 @@
 
 class: center, middle
 
-# Title
+# Modelo de calidad para evaluar continuidad de desarrollo
 
 ---
 
-# Agenda
+# Contenido
 
-1. Introduction
-2. Deep-dive
-3. ...
+--
+
+- Contexto
+
+--
+
+- Problema
+
+--
+
+- Propuesta
+
+--
+
+- Aplicación
+
+--
+
+- Conclusiones
 
 ---
 
-# Introduction
+# Contexto
+##.center[Calidad]
+
+--
+
+> "Be a yardstick of quality. Some people aren't used to an environment where excellence is expected." - Steve Jobs
+
+--
+
+> "Quality is not an act, it is a habit." - Aristotle
+
+--
+
+> "Quality means doing it right when no one is looking." - Henry Ford
+
+--
+
+> "Quality is never an accident. It is always the result of intelligent effort." - William A. Foster
+
+--
+
+> "Quality is more important that quantity. One home run is much better than two doubles." - Steve Jobs
+
+--
+
+.center[![img1](img/img1.jpg)]
+
+---
+# Contexto
+##.center[Calidad]
+
+1. El grado en el cual un sistema, componente o proceso cumple con los requerimientos especificados.
+
+2. La capacidad de un producto, servicio, sistema o proceso para cumplir con las necesidades, expectativas
+    o requerimientos del usuario o cliente.
+
+3. El conjunto de características de una entidad que le confieren su habilidad de satisfacer los requerimientos
+    declarados y además los implícitos.
+
+4. Conformidad en las expectativas del usuario, conformidad en los requerimientos del usuario, satisfacción del cliente,
+    confiabilidad y el nivel presente de defectos.
+
+5. El grado en el cual un conjunto inherente de características cumple con los requerimientos.
+
+6. El grado en el cual un sistema, componente o proceso cumple con las necesidades o expectativas de un cliente o usuario.
+
+.center[![img1](img/iso.jpg)]
+---
+# Contexto
+##.center[Mantenibilidad]
+
+--
+
+```java
+if{
+  if{
+    if{
+      if{
+        if{
+          ...
+```
+--
+
+```java
+classA = new ClassB(new ClassC(new ClassD(), new ClassE()))
+```
+
+--
+
+```html
+<!DOCTYPE html>
+<html>
+<head><title>Macaronic Code</title></head>
+<body>
+    <?php
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $dbh = new PDO('mysql:host=localhost;dbname=mydb', 'username', 'password');
+        $statement = $dbh->query("SELECT lastlog FROM logins WHERE ip = '$ip'");
+        $row = $statement->fetch(PDO::FETCH_ASSOC);
+        $dbh->query("INSERT INTO logins VALUES ('$ip', CURRENT_TIMESTAMP) ON DUPLICATE KEY 
+        UPDATE lastlog = CURRENT_TIMESTAMP");
+    ?>
+    <p>Hello, <?php print $ip; ?>.</p>
+    <script>
+        var lastlog = "<?php print $row['lastlog']?>";
+        if (lastlog > "") alert("You last visited "+lastlog);
+        else alert("You've never been here before.");
+    </script>
+</body>
+</html>
+```
+---
+
+# Contexto
+##.center[Mantenibilidad]
+
+.center[![img1](img/img3.jpg)]
+
+---
+
+
+# Problema
+
+---
+
+# Estado del arte
+
+---
+
+# Propuesta
+
+---
+
+# Aplicación
+
+---
+
+# Validación
+
+---
+
+# Conclusiones
 
     </textarea>
-    <script src="http://gnab.github.io/remark/downloads/remark-0.6.3.min.js" type="text/javascript">
-    </script>
+    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript"></script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
     <script type="text/javascript">
       var slideshow = remark.create();
+      // Setup MathJax
+      MathJax.Hub.Config({
+          tex2jax: {
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          }
+      });
+      MathJax.Hub.Queue(function() {
+          $(MathJax.Hub.getAllJax()).map(function(index, elem) {
+              return(elem.SourceElement());
+          }).parent().addClass('has-jax');
+      });
+
+      MathJax.Hub.Configured();
     </script>
   </body>
 </html>
