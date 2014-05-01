@@ -4,22 +4,102 @@
     <title>Title</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
-      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(//fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
 
       body { font-family: 'Droid Serif'; }
       h1, h2, h3 {
         font-family: 'Yanone Kaffeesatz';
-        font-weight: normal;
+        font-weight: 400;
+        margin-bottom: 0;
+        margin-top: 10px;
+      }
+      h1 { font-size: 3.5em; }
+      h2 { font-size: 3em; }
+      h3 { font-size: 1.6em; }
+
+      .carbon{
+        background:
+        linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+        linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+        linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+        linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+        linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+        linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+        background-color: #131313;
+        background-size: 20px 20px;
+      }
+
+      .triangle {
+        position: absolute;
+        margin-left: 270px;
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 173.2px 100px 0 100px;
+        border-color: #007bff transparent transparent transparent;
+      }
+
+      .metricstable{
+        position: absolute;
+        margin-top: 180px;
+      }
+      .danger {
+        color: #ff0000
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .centertable1{
+        margin-left: 250px;
+      }
+      .centertable2{
+        margin-left: 20px;
+      }
+
+      pre {
+        border-left: 0.4em solid #d7d7d7;
+        padding: 1em !important;
+      }
+      code {
+        background: transparent !important;
+      }
+      a {
+        color: #F92672;
+        text-decoration: none;
+      }
+      .task {
+        float: right;
+        font-size: 0.9em;
+        padding-top: 0.6em;
+      }
+      .task a {
+        color: #080;
+        text-decoration: none;
+      }
+      .right {
+        float: right;
+        margin-left: 1em;
+      }
+      .pushdown {
+        margin-top: 12em;
       }
     </style>
   </head>
   <body>
     <textarea id="source">
 
-class: center, middle
+class: center, middle, inverse
 
 # Modelo de calidad para evaluar continuidad de desarrollo
+### Pablo Acuña, [UTFSM](http://www.usm.cl)
 
 ---
 
@@ -47,8 +127,10 @@ class: center, middle
 
 ---
 
+class: center, middle, inverse
 # Contexto
-##.center[Calidad]
+---
+# Calidad
 
 --
 
@@ -75,8 +157,7 @@ class: center, middle
 .center[![img1](img/img1.jpg)]
 
 ---
-# Contexto
-##.center[Calidad]
+# Calidad
 
 1. El grado en el cual un sistema, componente o proceso cumple con los requerimientos especificados.
 
@@ -95,8 +176,7 @@ class: center, middle
 
 .center[![img1](img/iso.jpg)]
 ---
-# Contexto
-##.center[Mantenibilidad]
+# Mantenibilidad
 
 --
 
@@ -140,34 +220,119 @@ classA = new ClassB(new ClassC(new ClassD(), new ClassE()))
 ```
 ---
 
-# Contexto
-##.center[Mantenibilidad]
+# Mantenibilidad
 
 .center[![img1](img/img3.jpg)]
 
+--
+### .center[.danger[Afecta directamente a la continuidad de desarrollo]]
+
 ---
 
-
+class:center, middle, inverse
 # Problema
-
+---
+class: center, middle
+#¿Cómo podemos evaluar la continuidad de desarrollo de un producto de software?
 ---
 
-# Estado del arte
+# Literatura
+
+- Modelos de calidad
+--
+
+- Modelos de madurez
+
+--
+- Modelos matemáticos
 
 ---
 
 # Propuesta
 
+Generar un modelo de calidad basado en un estándar
+internacional
+
+--
+
+.center[![img1](img/4.png)]
+
+--
+
+- Adaptar el modelo para evaluar sólo mantenibilidad
+
+--
+
+- Definir un conjunto de métricas para evaluar
+
+--
+
+- Definir un conjunto de tareas para llevar a cabo durante el proceso de evaluación
+
 ---
 
+##.center[Características de interés (ISO 25010)]
+.centertable1[
+| Mantenibilidad | Portabilidad     |
+|:--------------:|:----------------:|
+| Modularidad    | Adaptabilidad    |
+| Reusabilidad   | Instalabilidad   |
+| Analizabilidad | Reemplazabilidad |
+| Testing        |                  |
+]
+
+--
+
+.triangle[]
+
+--
+
+.metricstable[ ##.center[Métricas seleccionadas]
+.centertable2[
+| Modularidad           | Reusabilidad | Modificabilidad          | Testing     | Portabilidad |
+|:---------------------:|:------------:|:------------------------:|:-----------:|:------------:|
+| Cohesión Relacional   | Duplicación  | Instabilidad             | Cubrimiento | Instabilidad |
+| LCOM                  |              | Complejidad Ciclomática  |             |              |
+| LCOM HS               |              | Índice de mantenibilidad |             |              |
+| Acoplamiento eferente |              | Profundidad              |             |              |
+| Acoplamient aferente  |              | Parámetros/Función       |             |              |
+]
+]
+---
+
+##.center[Proceso de evaluación]
+
+
+- Establecer los requerimientos de la evaluación
+  - Establecer el propósito de la evaluación
+  - Obtener los requerimientos de calidad del producto de software (si es que existen)
+  - Identificar las partes del producto que serán sometidas a la evaluación
+  - Definir el rigor de la evaluación (tomar en cuenta presupuestos, tiempos, propósito, etc)
+--
+
+- Diseñar la evaluación
+  - Generar el plan de actividades de evaluación
+--
+
+- Ejecutar la evaluación
+  - Realizar las mediciones utilizando el modelo entregado
+  - Aplicar criterios de decisión para las medidas utilizando el modelo entregado
+  - Aplicar criterios de decisión para la evaluación (tomar en cuenta los requerimientos de calidad del producto)
+--
+
+- Concluir la evaluación
+  - Revisar los resultados de la evaluación
+  - Entregar los datos de evaluación
+---
+class: center, middle, inverse
 # Aplicación
 
 ---
-
+class: center, middle, inverse
 # Validación
 
 ---
-
+class: center, middle, inverse
 # Conclusiones
 
     </textarea>
