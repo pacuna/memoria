@@ -299,7 +299,24 @@ internacional
 ]
 ]
 ---
+## Métricas (ejemplos)
+### Cohesión relacional
+### `$$H=\frac{R+1}{N}$$`
+Donde R es el número de relaciones internas entre tipos y el paquete, 
+N el número de tipos en el paquete.
+--
 
+### LCOM
+### `$$LCOM = 1 - \frac{\sum_{f\in F}\left|M_f\right|}{\left|M\right|\times\left|F\right|}$$`
+Donde M son los métodos estáticos e instancias en la clase, F campos 
+instanciados en la clase y `\(M_f\)`
+los métodos que acceden el campo `\(f_i\)`.
+--
+
+### Instabilidad
+### `$$I = C_e / (C_e + C_a)$$`
+Donde `\(C_e\)` es el acoplamiento eferente y `\(C_a\)` el acoplamiento aferente.
+---
 ##.center[Proceso de evaluación]
 
 
@@ -326,10 +343,6 @@ internacional
 ---
 class: center, middle, inverse
 # Aplicación
-
----
-class: center, middle, inverse
-# Validación
 
 ---
 class: center, middle, inverse
