@@ -10,7 +10,7 @@ las tareas fundamentales a la hora de llevar a cabo una evaluación sobre un pro
 
 La elección de las métricas que dan valor a cada subcaracterística se ha realizado a través
 de un análisis de la literatura y a través del criterio del autor,
-tomando en cuenta el refinamiento y evolución que los distintos enfoques 
+tomando en cuenta el refinamiento y evolución que los distintos enfoques
 de mantenibilidad han tenido durante los años, así como los requerimientos actuales
 en la industria del software. Junto a estas métricas, se presentan también las condiciones
 bajo las cuales el producto se debe considerar como mantenible o inmantenible de acuerdo
@@ -52,9 +52,9 @@ En SQuaRE se entregan:
 
 SQuaRE reemplaza a las series ISO/IEC 9126 y 14598.
 
-Para la construcción del framework de evaluación se utilizaron 
+Para la construcción del framework de evaluación se utilizaron
 principalmente la división de Modelo de Calidad, de la cual
-se obtuvo un conjunto de características  y subcaracterísticas enfocadas en la mantenibilidad del 
+se obtuvo un conjunto de características  y subcaracterísticas enfocadas en la mantenibilidad del
 producto, y la división de Evaluación de Calidad, de la cual se obtuvieron
 guías para generar las tareas principales que se deben llevar a cabo al conducir una evaluación
 sobre un producto.
@@ -85,9 +85,8 @@ de su continuidad de desarrollo.
 
 \subsection{Modelo de Calidad de Producto}
 Este modelo con sus características y subcaracterísticas se puede observar
-en el cuadro ~\ref{modeloiso25010}.
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
+en el cuadro~\ref{modeloiso25010}.
+
 \begin{table}[h]
   \tiny
 \begin{tabular}{@{}llllllll@{}}
@@ -102,13 +101,13 @@ en el cuadro ~\ref{modeloiso25010}.
 \caption{Modelo de calidad ISO 25010}
 \label{modeloiso25010}
 \end{table}
-Este modelo es útil para especificar requerimientos, establecer mediciones y 
+Este modelo es útil para especificar requerimientos, establecer mediciones y
 realizar evaluaciones de calidad. Las características definidas pueden ser utilizadas
 como una lista de verificación para asegurar un tratamiento exhaustivo de
 los requerimientos de calidad.
 
 En la práctica es muy complicado medir todas las subcaracterísticas para un sistema
-o producto de software de gran tamaño. De esta manera, la importancia de las 
+o producto de software de gran tamaño. De esta manera, la importancia de las
 características dependerá de los objetivos y metas del proyecto. El modelo
 debe ser adaptado antes de su uso como parte de la descomposición de requerimientos
 para identificar aquellas características y subcaracterísticas que son más
@@ -122,8 +121,6 @@ se consideró que la portabilidad del producto también influye en la continuida
 A continuación se presenta la implementación de la propuesta.
 
 \section{Definición del modelo propuesto}
-% PRESENTAR EL MODELO CONSTRUIDO
-% PRESENTAR LAS TAREAS DEL PROCESO DE EVALUACION
 
 \subsection{Selección de métricas para mantenibilidad}
 Las subcaracterísticas elegidas para mantenibilidad son \textbf{modularidad}, \textbf{reusabilidad},
@@ -139,19 +136,19 @@ H=\frac{R+1}{N}
 \end{equation*}
 Donde $R$ es el número de relaciones internas entre tipos y el paquete, $N$ el número de tipos en el paquete.
 
-Las clases dentro de un \textit{assembly}\footnote{biblioteca de código compilado} deben estar fuertemente 
-relacionadas, de esta manera la cohesión tendrá tener un valor alto. Por otro lado, valores demasiado altos 
+Las clases dentro de un \textit{assembly}\footnote{biblioteca de código compilado} deben estar fuertemente
+relacionadas, de esta manera la cohesión tendrá tener un valor alto. Por otro lado, valores demasiado altos
 podrían indicar sobre-acoplamiento. Un buen rango es $1.5\leq H\leq 4.0$.
 
 \subsubsection{LCOM (Falta de cohesión en métodos) (Modularidad)}
-El principio de responsabilidad única consiste en que una clase no debe tener más de una razón para cambiar. 
+El principio de responsabilidad única consiste en que una clase no debe tener más de una razón para cambiar.
 Una clase con esta característica es cohesiva.
 
 \begin{equation*}
 LCOM = 1 - \frac{\sum_{f\in F}\left|M_f\right|}{\left|M\right|\times\left|F\right|}
 \end{equation*}
 
-Donde $M$ son los métodos estáticos e instancias en la clase, $F$ campos instanciados en la clase y $M_f$ 
+Donde $M$ son los métodos estáticos e instancias en la clase, $F$ campos instanciados en la clase y $M_f$
 los métodos que acceden el campo $f_i$.
 
 En una clase que es completamente cohesionada, cada método debe acceder a cada campo instanciado:
@@ -161,11 +158,11 @@ En una clase que es completamente cohesionada, cada método debe acceder a cada 
 de manera que el $LCOM=0$.
 
 Un valor alto de $LCOM$ generalmente quiere decir que una clase tiene una baja cohesión. Tipos en los cuales
-$LCOM\ge 0.8$ y $\left|F\right|\ge 10$ y $\left|M\right|\ge 10$ podrían ser problemáticos. Sin embargo, es 
+$LCOM\ge 0.8$ y $\left|F\right|\ge 10$ y $\left|M\right|\ge 10$ podrían ser problemáticos. Sin embargo, es
 muy difícil evitar estos casos con poca cohesión.
 
 \subsubsection{LCOM HS (Falta de cohesión de métodos Henderson-Sellers) (Modularidad)}
-Esta métrica es similar a la anterior, pero toma su valor en un rango $\left[ 0-2\right]$. Un valor LCOM 
+Esta métrica es similar a la anterior, pero toma su valor en un rango $\left[ 0-2\right]$. Un valor LCOM
 HS mayor a $1$ debería ser considerado peligroso.
 
 \begin{equation*}
@@ -184,12 +181,12 @@ de responsabilidades que el tipo tiene.
 \subsubsection{Acoplamiento aferente (Modularidad)}
 Número de tipos fuera del paquete, que dependen de tipos que están en el paquete en evaluación.
 
-Un valor alto de esta métrica no es necesariamente peligroso, sin embargo es interesante saber que partes 
+Un valor alto de esta métrica no es necesariamente peligroso, sin embargo es interesante saber que partes
 del código son altamente utilizadas.
 
-Esta métrica es útil especialmente cuando es igual a $0$, lo cual podría indicar un elemento de código sin 
-uso. Estos casos deben ser manejados con cuidado para puntos de entrada, constructores de clases o 
-finalizadores ya que estos métodos siempre tendrán un valor $0$ para acoplamiento aferente y no 
+Esta métrica es útil especialmente cuando es igual a $0$, lo cual podría indicar un elemento de código sin
+uso. Estos casos deben ser manejados con cuidado para puntos de entrada, constructores de clases o
+finalizadores ya que estos métodos siempre tendrán un valor $0$ para acoplamiento aferente y no
 corresponden a código sin uso.
 
 \subsubsection{Instabilidad (Modificabilidad)}
@@ -209,7 +206,7 @@ un paquete completamente inestable.
 \subsubsection{Complejidad Ciclomática (Modificabilidad)}
 Número de decisiones que pueden ser tomadas en un procedimiento.
 Procedimientos con un valor mayor a 15 son difíciles de entender, mientras que con un valor mayor a 30
-son extremadamente complejos y deberían ser divididos en métodos más pequeños (a menos que sea código 
+son extremadamente complejos y deberían ser divididos en métodos más pequeños (a menos que sea código
 auto-generado).
 
 \subsubsection{índice de mantenibilidad (Modificabilidad)}
@@ -232,19 +229,19 @@ no se esté sobrepasando.
 \subsubsection{Código duplicado (Reusabilidad)}
 
 Se utiliza alguna heurística para detectar código potencialmente duplicado.
-El hecho de encontrar un porcentaje alto de duplicación, podría indicar que no se está haciendo un reuso 
-adecuado en el software.
+El hecho de encontrar un porcentaje alto de duplicación, podría indicar que no se reutilizando
+código de manera adecuada.
 
 \subsection{Selección de métricas para portabilidad}
 
 \subsubsection{Prácticas de instalación (Instalabilidad)}
 
-Descripciones cualitativas acerca de cómo se implementa una instalación estándar para el producto. 
+Descripciones cualitativas acerca de cómo se implementa una instalación estándar del producto.
 Se estudian estos procesos y se recomiendan mejoras para alinear las prácticas a estándares profesionales.
 
 \section{Definición de las tareas propuestas para el proceso de evaluación}
 
-Las principales tareas y sub-tareas dentro del proceso de evaluación son:
+Las principales tareas y subtareas dentro del proceso de evaluación son:
 
 \begin{enumerate}
     \item Establecer los requerimientos de la evaluación
@@ -280,7 +277,8 @@ una evaluación de calidad específicamente para evaluar la continuidad de desar
 usando como puente las métricas que definen su mantenibilidad.
 Las tareas del proceso sirven para hacer un análisis previo del contexto del producto así como para prepara un informe acorde a
 estándares internacionales. Además se pueden privilegiar ciertas métricas del modelo o incluso omitir algunas. 
-Por ejemplo, dependiendo del tipo de arquitectura en cuestión, algunas métricas podrían no ser útiles. Un caso especial es cuando se analiza un arquitectura de lado ciente, por
+Por ejemplo, dependiendo del tipo de arquitectura en cuestión, algunas métricas podrían no ser útiles. 
+Un caso especial es cuando se analiza un arquitectura de lado ciente, por
 ejemplo código javascript. En este tipo de sistemas, métricas que son más efectivas en sistemas orientado a objetos de lado servidor podrían carecer
 de sentido (acoplamiento entre clases, cohesión relativa, etc). En este tipo de sistemas son más útiles métricas como profundidad,
 número de parámetros o complejidad ciclomática.
