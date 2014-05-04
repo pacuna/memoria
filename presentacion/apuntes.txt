@@ -1,0 +1,31 @@
+Apuntes slides
+
+1. Presentación
+2. Contenido
+8. Contexto
+9. Contexto/calidad:
+  - comentar las citas
+16. Calidad contexto ISO
+22. Mantenibilidad
+  - ejemplos de código
+  - que problemas generan este tipo de códigos?
+  - relacionarlo con el tema
+28. Problema
+  - explicar bien el problema principal y secundarios
+30. Literatura
+  - Comentar los enfoques típicos en la literatura
+33. Propuesta
+  - explicar ventajas de usar este modelo
+  - explicar las divisiones
+  - hablar de la adapción
+  - hablar de lo que falta luego de elegir el modelo base
+  - hablar de la importancia de las tareas de evaluación
+39. Subconjunto elegido, métricas seleccionadas
+42. Ejemplos de métricas
+45. Explicar el proceso de evaluación
+49. AplicaciónA
+51. Explicar requerimientos: objetivo de mosaq/toeska
+  - explicar diseño, como se organizó todo
+  - ejemplos de resutados
+62. Conclusiones
+
