@@ -29,3 +29,13 @@ Apuntes slides
   - ejemplos de resutados
 62. Conclusiones
 
+
+Repasar: Que hace cada división de la ISO 25000
+  métricas: - cohesión relacional
+            - LCOM
+            - Instabilidad
+            - Acoplamiento A y E
+            - Complejidad ciclomática
+            - Índice de mantenibilidad
+            - Como fue el plan de testing
+
